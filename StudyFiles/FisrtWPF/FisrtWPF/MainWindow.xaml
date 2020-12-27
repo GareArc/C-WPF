@@ -1,0 +1,87 @@
+﻿<Window x:Class="FisrtWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FisrtWPF"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="600" Width="500">
+    <Border Padding="5 5 5 5">
+        <StackPanel>
+            <Grid Margin="0 0 0 10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="三人购物计算器" FontWeight="Bold" FontSize="18" Background="#eee"/>
+                <TextBlock Grid.Column="1" Text="" Background="#eee" Margin="3 0 0 0"/>
+            </Grid>
+            <TextBlock Text="三人部分:" FontSize="16" />
+            <Grid Margin="0 20 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="dfCheckBox" Checked="dfCheckBox_Changed" Unchecked="dfCheckBox_Changed" Grid.Column="0" FontSize="14" Content="电费" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name="dfTextBox" Grid.Column="1" Margin="0 0 20 0" Text="" FontSize="14" IsReadOnly="True" Background="#eee"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="wfCheckBox" Checked="wfCheckBox_Changed"  Unchecked="wfCheckBox_Changed" Grid.Column="0" FontSize="14" Content="网费" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name="wfTextBox" Grid.Column="1"  Text=""  Margin="0 0 20 0" FontSize="14" IsReadOnly="True" Background="#eee"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="amzCheckBox" Checked="amzCheckBox_Changed" Unchecked="amzCheckBox_Changed" Grid.Column="0" FontSize="14" Content="Amazon" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name="amzTextBox" Grid.Column="1"  Text=""  Margin="0 0 20 0" FontSize="14" IsReadOnly="True" Background="#eee"/>
+                    </Grid>
+                  
+                </StackPanel>
+                <StackPanel Margin="10 0 0 0" Grid.Column ="1">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="amzpCheckBox" Checked="amzpCheckBox_Changed" Unchecked="amzpCheckBox_Changed" Grid.Column="0" FontSize="14" Content="Amazon会员" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name="amzpTextBox" Grid.Column="1"  Text=""  Margin="0 0 10 0" FontSize="14" IsReadOnly="True" Background="#eee"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="wmCheckBox" Checked="wmCheckBox_Changed" Unchecked="wmCheckBox_Changed" Grid.Column="0" FontSize="14" Content="外卖费" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name="wmTextBox" Grid.Column="1"  Text=""  Margin="0 0 10 0" FontSize="14" IsReadOnly="True" Background="#eee"/>
+                    </Grid>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <CheckBox x:Name="zxCheckBox" Checked="zxCheckBox_Changed" Unchecked="zxCheckBox_Changed" Grid.Column="0" FontSize="14" Content="杂项" VerticalContentAlignment="Center" FontWeight="Bold"/>
+                        <TextBox x:Name="zxTextBox" Grid.Column="1"  Text=""  Margin="0 0 10 0" FontSize="14" IsReadOnly="True" Background="#eee"/>
+                    </Grid>
+                    
+                    
+                    
+                    
+                </StackPanel>
+
+
+            </Grid>
+        </StackPanel>
+    </Border>
+</Window>

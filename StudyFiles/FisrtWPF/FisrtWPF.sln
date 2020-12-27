@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30804.86
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FisrtWPF", "FisrtWPF\FisrtWPF.csproj", "{D918CFB2-942A-4FCA-B76A-2DB141F8886E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D918CFB2-942A-4FCA-B76A-2DB141F8886E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D918CFB2-942A-4FCA-B76A-2DB141F8886E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D918CFB2-942A-4FCA-B76A-2DB141F8886E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D918CFB2-942A-4FCA-B76A-2DB141F8886E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F59DD60-0446-4416-86E7-AE6A3BA1CDBE}
+	EndGlobalSection
+EndGlobal

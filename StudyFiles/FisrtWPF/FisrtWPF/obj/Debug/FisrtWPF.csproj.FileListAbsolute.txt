@@ -1,0 +1,15 @@
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\bin\Debug\FisrtWPF.exe.config
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\bin\Debug\FisrtWPF.exe
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\bin\Debug\FisrtWPF.pdb
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.csprojAssemblyReference.cache
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\MainWindow.g.cs
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\App.g.cs
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF_MarkupCompile.cache
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF_MarkupCompile.lref
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\MainWindow.baml
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.g.resources
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.Properties.Resources.resources
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.csproj.GenerateResource.cache
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.csproj.CoreCompileInputs.cache
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.exe
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.pdb
