@@ -13,3 +13,6 @@ F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.csproj.Gene
 F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.csproj.CoreCompileInputs.cache
 F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.exe
 F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.pdb
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\AddItemWindow.g.cs
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\AddItemWindow.baml
+F:\Github repo\C#WPF\StudyFiles\FisrtWPF\FisrtWPF\obj\Debug\FisrtWPF.csproj.Fody.CopyLocal.cache

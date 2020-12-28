@@ -5,9 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FisrtWPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="500">
+        Title="MainWindow" Height="600" Width="500"
+        WindowStartupLocation="CenterScreen">
     <Border Padding="5 5 5 5">
         <StackPanel>
+            <!-- Title -->
             <Grid Margin="0 0 0 10">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
@@ -17,11 +19,13 @@
                 <TextBlock Grid.Column="1" Text="" Background="#eee" Margin="3 0 0 0"/>
             </Grid>
             <TextBlock Text="三人部分:" FontSize="16" />
+            <!-- Shared fees part-->
             <Grid Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
+                <!-- First column-->
                 <StackPanel Grid.Column="0">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -49,6 +53,7 @@
                     </Grid>
                   
                 </StackPanel>
+                <!-- Second Column-->
                 <StackPanel Margin="10 0 0 0" Grid.Column ="1">
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -74,14 +79,35 @@
                         <CheckBox x:Name="zxCheckBox" Checked="zxCheckBox_Changed" Unchecked="zxCheckBox_Changed" Grid.Column="0" FontSize="14" Content="杂项" VerticalContentAlignment="Center" FontWeight="Bold"/>
                         <TextBox x:Name="zxTextBox" Grid.Column="1"  Text=""  Margin="0 0 10 0" FontSize="14" IsReadOnly="True" Background="#eee"/>
                     </Grid>
-                    
-                    
-                    
+                </StackPanel>
+            </Grid>
+            <!-- Individual fees Part-->
+            <Grid Height="350">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Target 1-->
+                <StackPanel x:Name="Target1Panel" Grid.Column="0">
+                    <TextBlock Text="对象1:" FontSize="16" Margin="0 10 0 10"/>
+                    <Button x:Name="T1AddButton" Click="T1AddButton_Click" Content="添加" Margin="0 0 200 0"/>
                     
                 </StackPanel>
-
-
+                <!--Target 2-->
+                <StackPanel x:Name="Target2Panel" Grid.Column="1">
+                    <TextBlock Text="对象2:" FontSize="16" Margin="0 10 0 10"/>
+                    <Button x:Name="T2AddButton" Click="T2AddButton_Click" Content="添加" Margin="0 0 200 0"/>
+                </StackPanel>
             </Grid>
+            <!--Calculate Button-->
+            <Button x:Name="CalculateButton" Click="CalculateButton_Click" Content="计算" Margin="200 0 200 5"/>
+            <!--Output Texts-->
+            
+            <!--Outpout Text1-->
+            <TextBlock x:Name="Output1" Text="对象1总计:" FontSize="16" Grid.Column="0" TextAlignment="Center"/>
+            <!--Output Text2-->
+            <TextBlock x:Name="Output2" Text="对象2总计:" FontSize="16" Grid.Column="1" TextAlignment="Center"/>
+            
         </StackPanel>
     </Border>
 </Window>
