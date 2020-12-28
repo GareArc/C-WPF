@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:FisrtWPF"
         mc:Ignorable="d"
         Icon="c.ico"
-        Title="MainWindow" Height="600" Width="500"
+        Title="MainWindow" Height="640" Width="500"
         WindowStartupLocation="CenterScreen">
     <Border Padding="5 5 5 5">
         <StackPanel>
@@ -102,8 +102,8 @@
             </Grid>
             <!--Calculate Button-->
             <Button x:Name="CalculateButton" Click="CalculateButton_Click" Content="计算" Margin="200 0 200 5"/>
-            <!--Output Texts-->
-            
+            <!-- Reset Button -->
+            <Button x:Name="ResetButton" Click="ResetButton_Click" Content="清空" Margin="200 0 200 5"/>
             <!--Outpout Text1-->
             <TextBlock x:Name="Output1" Text="对象1总计:" FontSize="16" Grid.Column="0" TextAlignment="Center"/>
             <!--Output Text2-->

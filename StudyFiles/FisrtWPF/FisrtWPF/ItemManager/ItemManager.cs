@@ -13,7 +13,24 @@ namespace FisrtWPF
 
         private static Item LastItem { get; set; }
 
+        private static bool Updated { get; set; } = false;
+
         public ItemManager() {}
+
+        public void ClearAll() 
+        {
+            Items1 = new List<Item>();
+            Items2 = new List<Item>();
+            LastItem = null;
+            Updated = false;
+        }
+
+        public void FinishUpdate() 
+        {
+            Updated = false;
+        }
+
+        public bool GetUpdateInfo() { return Updated; }
 
         public bool AddToList1(string price, string quantity, bool? taxed) 
         {
@@ -30,6 +47,7 @@ namespace FisrtWPF
             Items1.Add(item);
             LastItem = item;
 
+            Updated = true;
             return true;
         }
 
@@ -48,6 +66,7 @@ namespace FisrtWPF
             Items2.Add(item);
             LastItem = item;
 
+            Updated = true;
             return true;
         }
 

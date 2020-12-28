@@ -24,6 +24,7 @@ namespace FisrtWPF
         private PanelHandler pH = new PanelHandler();
         private ItemManager iM = new ItemManager();
         private CalculateHandler cH = new CalculateHandler();
+        //private ResetHandler resetH = new ResetHandler();
         public MainWindow()
         {
             InitializeComponent();
@@ -69,14 +70,18 @@ namespace FisrtWPF
         {
             var wd = new AddItemWindow(0);
             wd.ShowDialog();
+            if (!iM.GetUpdateInfo()) return;
             pH.AddTextBlock(Target1Panel, iM.GetLastItemInfo());
+            iM.FinishUpdate();
         }
 
         private void T2AddButton_Click(object sender, RoutedEventArgs e)
         {
             var wd = new AddItemWindow(1);
             wd.ShowDialog();
+            if (!iM.GetUpdateInfo()) return;
             pH.AddTextBlock(Target2Panel, iM.GetLastItemInfo());
+            iM.FinishUpdate();
         }
 
         #endregion
@@ -96,6 +101,13 @@ namespace FisrtWPF
         public void ShowMsgBox(string info)
         {
             MessageBox.Show(info);
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow newMain = new MainWindow();
+            newMain.Show();
+            Close();
         }
     }
 }
