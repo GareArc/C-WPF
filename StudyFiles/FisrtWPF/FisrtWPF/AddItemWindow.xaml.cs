@@ -36,8 +36,8 @@ namespace FisrtWPF
 
             bool succeed;
             if (this.Source == 0) succeed = itemM.AddToList1(txt.Trim(), qt.Trim(), ck);
-            else succeed = itemM.AddToList2(txt.Trim(), qt.Trim(), ck);
-
+            else if (this.Source == 1) succeed = itemM.AddToList2(txt.Trim(), qt.Trim(), ck);
+            else succeed = itemM.AddToSharedList(txt.Trim(), qt.Trim(), ck);
             if (!succeed) 
             {
                 MessageBox.Show("错误输入信息,请复查。");

@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Runtime.CompilerServices;
 namespace FisrtWPF
 {
-    class Item
+    public class Item : INotifyPropertyChanged
     {
         private int Target { get; }
         private double Price { get; set; }
@@ -22,6 +23,8 @@ namespace FisrtWPF
             this.IsTaxed = taxed;
         }
 
+        public event PropertyChangedEventHandler PropertyChanged = (sender, e) => {};
+
         public double CalculatePrice()
         {
             // Calculate base price.
@@ -31,7 +34,7 @@ namespace FisrtWPF
         }
         public override string ToString()
         {
-            return string.Format("{0} * {1} {2}", this.Price, this.Quantity, this.IsTaxed ? "(Taxed)" : "");
+            return string.Format("${0} * {1}  {2}", this.Price, this.Quantity, this.IsTaxed ? "(Taxed)" : "");
         }
     }
 }

@@ -38,6 +38,8 @@ namespace FisrtWPF
             if (!RegisterValue(ref SharedTotal, wmtxt, wmc)) return false;
             if (!RegisterValue(ref SharedTotal, zxtxt, zxc)) return false;
 
+            SharedTotal += iM.CalculatePriceShared();
+
             //Process individual
             double Individual1 = iM.CalculatePriceIn1();
             double Individual2 = iM.CalculatePriceIn2();

@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace FisrtWPF
 {
@@ -21,13 +8,18 @@ namespace FisrtWPF
     public partial class MainWindow : Window
     {
         private CheckBoxHandler cbHandler = new CheckBoxHandler();
-        private PanelHandler pH = new PanelHandler();
         private ItemManager iM = new ItemManager();
         private CalculateHandler cH = new CalculateHandler();
-        //private ResetHandler resetH = new ResetHandler();
+        private ListViewButtonHandler LvbH = new ListViewButtonHandler();
+        
         public MainWindow()
         {
             InitializeComponent();
+            this.DataContext = iM;
+            List1.ItemsSource = iM.GetShared();
+            List2.ItemsSource = iM.GetItems1();
+            List3.ItemsSource = iM.GetItems2();
+
         }
 
         #region CheckBox Change
@@ -70,18 +62,12 @@ namespace FisrtWPF
         {
             var wd = new AddItemWindow(0);
             wd.ShowDialog();
-            if (!iM.GetUpdateInfo()) return;
-            pH.AddTextBlock(Target1Panel, iM.GetLastItemInfo());
-            iM.FinishUpdate();
         }
 
         private void T2AddButton_Click(object sender, RoutedEventArgs e)
         {
             var wd = new AddItemWindow(1);
             wd.ShowDialog();
-            if (!iM.GetUpdateInfo()) return;
-            pH.AddTextBlock(Target2Panel, iM.GetLastItemInfo());
-            iM.FinishUpdate();
         }
 
         #endregion
@@ -108,6 +94,27 @@ namespace FisrtWPF
             MainWindow newMain = new MainWindow();
             newMain.Show();
             Close();
+        }
+
+        private void SharedAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            var wd = new AddItemWindow(2);
+            wd.ShowDialog();
+        }
+
+        private void SharedDeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            iM.RemoveFromShared(List1.SelectedIndex);
+        }
+
+        private void T1DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            iM.RemoveFromItems1(List2.SelectedIndex);
+        }
+
+        private void T2DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            iM.RemoveFromItems2(List3.SelectedIndex);
         }
     }
 }
