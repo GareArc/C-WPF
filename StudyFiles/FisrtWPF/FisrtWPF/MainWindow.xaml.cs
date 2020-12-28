@@ -113,6 +113,7 @@ namespace FisrtWPF
 
         private void ResetButton_Click(object sender, RoutedEventArgs e)
         {
+            iM.ClearAll();
             MainWindow newMain = new MainWindow();
             newMain.Show();
             Close();

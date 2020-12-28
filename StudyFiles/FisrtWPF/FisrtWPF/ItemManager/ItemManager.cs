@@ -36,6 +36,7 @@ namespace FisrtWPF
         {
             Items1 = new ObservableCollection<Item>();
             Items2 = new ObservableCollection<Item>();
+            Shared = new ObservableCollection<Item>();
             LastItem = null;
             Updated = false;
         }
