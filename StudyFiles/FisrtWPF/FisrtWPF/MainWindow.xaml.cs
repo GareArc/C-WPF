@@ -35,12 +35,13 @@ namespace FisrtWPF
 
         private void wfCheckBox_Changed(object sender, RoutedEventArgs e)
         {
+            wfTextBox.Text = "50.85";
             cbHandler.ChangeTextBox(wfTextBox);
         }
 
         private void amzpCheckBox_Changed(object sender, RoutedEventArgs e)
         {
-            amzpTextBox.Text = "(默认)";
+            amzpTextBox.Text = "5.3";
             cbHandler.ChangeTextBox(amzpTextBox);
             
         }
@@ -57,7 +58,7 @@ namespace FisrtWPF
 
         #endregion
 
-        #region Add Button Click
+        #region Add or Delete Button Click
         private void T1AddButton_Click(object sender, RoutedEventArgs e)
         {
             var wd = new AddItemWindow(0);
@@ -68,6 +69,27 @@ namespace FisrtWPF
         {
             var wd = new AddItemWindow(1);
             wd.ShowDialog();
+        }
+
+        private void SharedAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            var wd = new AddItemWindow(2);
+            wd.ShowDialog();
+        }
+
+        private void SharedDeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            iM.RemoveFromShared(List1.SelectedIndex);
+        }
+
+        private void T1DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            iM.RemoveFromItems1(List2.SelectedIndex);
+        }
+
+        private void T2DeleteButton_Click(object sender, RoutedEventArgs e)
+        {
+            iM.RemoveFromItems2(List3.SelectedIndex);
         }
 
         #endregion
@@ -96,25 +118,7 @@ namespace FisrtWPF
             Close();
         }
 
-        private void SharedAddButton_Click(object sender, RoutedEventArgs e)
-        {
-            var wd = new AddItemWindow(2);
-            wd.ShowDialog();
-        }
 
-        private void SharedDeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            iM.RemoveFromShared(List1.SelectedIndex);
-        }
-
-        private void T1DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            iM.RemoveFromItems1(List2.SelectedIndex);
-        }
-
-        private void T2DeleteButton_Click(object sender, RoutedEventArgs e)
-        {
-            iM.RemoveFromItems2(List3.SelectedIndex);
-        }
+        
     }
 }
