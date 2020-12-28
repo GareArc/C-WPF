@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FisrtWPF"
         mc:Ignorable="d"
+        Icon="c.ico"
         Title="AddItemWindow" Height="130" Width="300"
         WindowStartupLocation="CenterScreen">
     <Grid>
