@@ -29,7 +29,7 @@
                         <TextBox x:Name="QuantityTextBox" Text="1" IsReadOnly="False" FontSize="12" Margin="15 0 0 0"/>
                     </StackPanel>
                     <!-- Tax -->
-                    <CheckBox x:Name="TaxButton" Content="是否含税" FontSize="12" Grid.Column="2" VerticalContentAlignment="Center"/>
+                    <CheckBox x:Name="TaxButton" Content="是否含税" FontSize="12" Grid.Column="2" VerticalAlignment="Center" />
                 </Grid>
                 <!--Confirm Button-->
                 <Button x:Name="ComfirmButton" Click="ComfirmButton_Click" Content="确认" Margin="100 20 100 0" VerticalAlignment="Center"/>
