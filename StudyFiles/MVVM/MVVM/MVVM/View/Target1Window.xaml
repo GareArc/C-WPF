@@ -1,0 +1,40 @@
+﻿<Window x:Class="MVVM.View.Target1Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Target1" Height="260" Width="450">
+    <Border Margin="5">
+        <StackPanel Margin="0 10 0 0">
+            <!--Description-->
+            <TextBlock Text="{Binding Path=Target1User, StringFormat='统计对象: {0}'}" VerticalAlignment="Center" TextAlignment="Center" Padding="0 5 0 0"  Margin="5 5 5 5" FontSize="16" Height="30" FontWeight="Bold" Background="LightGray"/>
+            <!--Body-->
+            <Grid Margin="0 20 0 0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <!-- Button -->
+                <StackPanel Grid.Column="0">
+                    <Button Command="{Binding AddButtonCmd}" Content="添加" Height="20" Width="50" HorizontalAlignment="Center" Margin="0 0 0 30"/>
+                    <Button Command="{Binding DeleteButtonCmd, UpdateSourceTrigger=PropertyChanged}" Content="删除" Height="20" Width="50" HorizontalAlignment="Center"/>
+                </StackPanel>
+                <!--List-->
+                <ListView Grid.Column="1" ItemsSource="{Binding ItemList1}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" TextElement.FontWeight="Bold" Height="70" MaxHeight="70">
+                </ListView>
+                <!--Stats-->
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="{Binding Path=ItemList1Count, StringFormat='物品总数: {0}'}" FontSize="14" FontWeight="Bold" TextAlignment="Center" Background="LightGray" Margin="30 12 30 0"/>
+                    <TextBlock Text="{Binding Path=Taxed1Count, StringFormat='含税物品: {0}'}" FontSize="14" FontWeight="Bold" TextAlignment="Center" Background="LightGray" Margin="30 10 30 0"/>
+                </StackPanel>
+                
+            </Grid>
+            <!--Comfrim Button-->
+            <Button Command="{Binding ComfirmButtonCmd}" Content="确认" Height="30" Width="50" HorizontalAlignment="Center" VerticalContentAlignment="Center" Margin="30"/>
+        </StackPanel>
+    </Border>
+</Window>
