@@ -60,8 +60,8 @@ namespace MVVM
             target2 += shared;
 
             // Assign value
-            Target1Total = target1;
-            Target2Total = target2;
+            Target1Total = Math.Round(target1, 3);
+            Target2Total = Math.Round(target2, 3);
             ChangeTargetResults();
         }
 
@@ -118,6 +118,15 @@ namespace MVVM
         private void OpenTwoPeopleWindow(object parameter)
         {
             WindowFactory.OpenNormalWindow(3);
+        }
+        #endregion
+
+        #region PrintInfoBtnCmd
+        public ICommand PrintInfoBtnCommand { get; set; }
+
+        private void PrintInfo(object parameter) 
+        {
+            pm.Print();
         }
         #endregion
     }

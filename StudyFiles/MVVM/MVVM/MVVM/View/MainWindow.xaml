@@ -111,8 +111,9 @@
                 </Grid.ColumnDefinitions>
                 <!--Clear/Calculate Button-->
                 <StackPanel Margin="0 15 0 0" Orientation="Horizontal" Grid.Column="0">
-                    <Button Command="{Binding ResetButtonCmd}" Content="清空"  HorizontalAlignment="Left" Margin="120 0 10 0" Height="30" Width="40"/>
+                    <Button Command="{Binding ResetButtonCmd}" Content="清空"  HorizontalAlignment="Left" Margin="100 0 10 0" Height="30" Width="40"/>
                     <Button Command="{Binding CalculateFinalCmd, UpdateSourceTrigger=PropertyChanged}" Content="结算"  HorizontalAlignment="Left" Margin="0 0 10 0" Height="30" Width="40"/>
+                    <Button Command="{Binding PrintInfoBtnCommand, UpdateSourceTrigger=PropertyChanged}" Content="导出"  HorizontalAlignment="Left" Margin="0 0 10 0" Height="30" Width="40"/>
                 </StackPanel>
                 <!--Result Texts-->
             </Grid>

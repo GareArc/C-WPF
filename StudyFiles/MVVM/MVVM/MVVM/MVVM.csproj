@@ -67,6 +67,7 @@
     <Compile Include="Base\ViewModelbase.cs" />
     <Compile Include="Commands\ConditionalCmd.cs" />
     <Compile Include="Commands\UnconditionalCmd.cs" />
+    <Compile Include="GateWay\PrintManager.cs" />
     <Compile Include="Model\ItemShared.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="ViewModel\AddItem2WindowBinding\ComfirmButtonCmd.cs" />

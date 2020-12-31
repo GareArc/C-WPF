@@ -11,12 +11,15 @@ namespace MVVM
         private IWindowFactory WindowFactory = new WindowFactory();
         public ItemListsManager ItemListsM = ItemListsManager.GetInstance();
         private UserManager um = UserManager.GetInstance();
+        private PrintManager pm;
         public Action CloseMainWindow { get; set; }
+
         public MainWindowItems() 
         {
-            // Initialize Target1Result and Target2Result
+            // Initialize 
             Target1Result = string.Format("目标一待定");
             Target2Result = string.Format("目标二待定");
+            pm = new PrintManager(this);
             // Inner Notification
             ItemListsM.PropertyChanged += ItemListManagerPropertyChanged;
             um.PropertyChanged += UserMangerPropertyChanged;
@@ -34,6 +37,7 @@ namespace MVVM
             CalculateFinalCmd = new ConditionalCmd(CalculateFinal, CanCalculateFinal);
             Edit2Cmd = new UnconditionalCmd(OpenTarget2Window);
             Edit3Cmd = new UnconditionalCmd(OpenTwoPeopleWindow);
+            PrintInfoBtnCommand = new UnconditionalCmd(PrintInfo);
         }
     }
 }
