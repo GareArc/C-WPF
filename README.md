@@ -1,2 +1,2 @@
 # C-WPF
-Files for study WPF
+Files for studying WPF
