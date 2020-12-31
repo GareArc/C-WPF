@@ -100,7 +100,7 @@ namespace MVVM
         private void ResetAll(object parameter)
         {
             ItemListsM.ClearLists();
-            WindowFactory.OpenNormalWindow(0);
+            WindowFactory.OpenNormalWindow(0, false);
             CloseMainWindow();
         }
         #endregion
