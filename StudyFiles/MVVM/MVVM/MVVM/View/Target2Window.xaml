@@ -10,7 +10,7 @@
     <Border Margin="5">
         <StackPanel Margin="0 10 0 0">
             <!--Description-->
-            <TextBlock Text="{Binding Path=Target2User, StringFormat='统计对象: {0}'}" VerticalAlignment="Center" TextAlignment="Center" Padding="0 5 0 0"  Margin="5 5 5 5" FontSize="16" Height="30" FontWeight="Bold" Background="LightGray"/>
+            <TextBlock Text="{Binding Path=um.Target2User, StringFormat='统计对象: {0}'}" VerticalAlignment="Center" TextAlignment="Center" Padding="0 5 0 0"  Margin="5 5 5 5" FontSize="16" Height="30" FontWeight="Bold" Background="LightGray"/>
             <!--Body-->
             <Grid Margin="0 20 0 0">
                 <Grid.ColumnDefinitions>
@@ -24,12 +24,12 @@
                     <Button Command="{Binding DeleteButtonCmd, UpdateSourceTrigger=PropertyChanged}" Content="删除" Height="20" Width="50" HorizontalAlignment="Center"/>
                 </StackPanel>
                 <!--List-->
-                <ListView Grid.Column="1" ItemsSource="{Binding ItemList2}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" TextElement.FontWeight="Bold" Height="70" MaxHeight="70">
+                <ListView Grid.Column="1" ItemsSource="{Binding ItemLM.ItemList2}" SelectedIndex="{Binding SelectedIndex, Mode=TwoWay}" TextElement.FontWeight="Bold" Height="70" MaxHeight="70">
                 </ListView>
                 <!--Stats-->
                 <StackPanel Grid.Column="2">
-                    <TextBlock Text="{Binding Path=ItemList2Count, StringFormat='物品总数: {0}'}" FontSize="14" FontWeight="Bold" TextAlignment="Center" Background="LightGray" Margin="30 12 30 0"/>
-                    <TextBlock Text="{Binding Path=Taxed2Count, StringFormat='含税物品: {0}'}" FontSize="14" FontWeight="Bold" TextAlignment="Center" Background="LightGray" Margin="30 10 30 0"/>
+                    <TextBlock Text="{Binding Path=ItemLM.ItemList2Count, StringFormat='物品总数: {0}'}" FontSize="14" FontWeight="Bold" TextAlignment="Center" Background="LightGray" Margin="30 12 30 0"/>
+                    <TextBlock Text="{Binding Path=ItemLM.Taxed2Count, StringFormat='含税物品: {0}'}" FontSize="14" FontWeight="Bold" TextAlignment="Center" Background="LightGray" Margin="30 10 30 0"/>
                 </StackPanel>
 
             </Grid>

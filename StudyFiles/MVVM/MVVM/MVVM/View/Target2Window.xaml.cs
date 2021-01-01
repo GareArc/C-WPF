@@ -19,7 +19,7 @@ namespace MVVM.View
     /// </summary>
     public partial class Target2Window : Window
     {
-        private MainTarget2Items mt2 = new MainTarget2Items();
+        private Target2ViewModel mt2 = new Target2ViewModel();
         public Target2Window()
         {
             InitializeComponent();

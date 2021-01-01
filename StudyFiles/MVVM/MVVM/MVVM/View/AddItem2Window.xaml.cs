@@ -19,11 +19,11 @@ namespace MVVM.View
     /// </summary>
     public partial class AddItem2Window : Window
     {
-        private MainAddItem2Items mat2;
+        private AddItem2ViewModel mat2;
         public AddItem2Window(int rid, string r)
         {
             InitializeComponent();
-            mat2 = new MainAddItem2Items(rid, r);
+            mat2 = new AddItem2ViewModel(rid, r);
             mat2.CloseWindow = new Action(() => Close());
             DataContext = mat2;
         }
