@@ -17,19 +17,25 @@
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
-                <!--Price-->
+                <!--Type-->
                 <StackPanel Grid.Column="0">
+                    <TextBlock Text="类型" FontSize="18" Background="LightGray" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10 0 10 20"/>
+                    <ComboBox Margin="0 5 0 0" Width="85" Height="25" ItemsSource="{Binding ChoiceList}" SelectedItem="{Binding SeletedItem, Mode=TwoWay}"></ComboBox>
+                </StackPanel>
+                <!--Price-->
+                <StackPanel Grid.Column="1">
                     <TextBlock Text="单价" FontSize="18" Background="LightGray" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10 0 10 20"/>
                     <TextBox Text="{Binding PriceText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Height="40" Margin="10 0 10 0"/>
                 </StackPanel>
                 <!--Quantity-->
-                <StackPanel Grid.Column="1">
+                <StackPanel Grid.Column="2">
                     <TextBlock Text="数量" FontSize="18" Background="LightGray" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10 0 10 20"/>
                     <TextBox Text="{Binding QuantityText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontSize="20" Height="40" Margin="10 0 10 0"/>
                 </StackPanel>
                 <!--Taxed-->
-                <StackPanel Grid.Column="2">
+                <StackPanel Grid.Column="3">
                     <TextBlock Text="是否收税" FontSize="18" Background="LightGray" TextAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" Margin="10 0 10 20"/>
                     <CheckBox IsChecked="{Binding TaxedText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Center" Margin="0 6 0 0">
                         <CheckBox.LayoutTransform>

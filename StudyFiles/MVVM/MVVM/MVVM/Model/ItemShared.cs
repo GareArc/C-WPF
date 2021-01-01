@@ -8,7 +8,7 @@ namespace MVVM
 {
     class ItemShared : Item
     {
-        public ItemShared(double Price, double Quantity, bool Taxed, int RelationId, string Relation) : base(Price, Quantity, Taxed)
+        public ItemShared(double Price, double Quantity, bool Taxed, int RelationId, string Relation, ItemType.ShopTypes type) : base(Price, Quantity, Taxed, type)
         {
             this.Relation = Relation;
             this.RelationId = RelationId;
@@ -30,7 +30,7 @@ namespace MVVM
 
         public override string ToString()
         {
-            return string.Format("${0} * {1}  {2} [{3}]", Price, Quantity, Taxed ? "(Taxed)" : "", Relation);
+            return string.Format("[{0}] ${1} * {2}  {3} [{4}]", Type, Price, Quantity, Taxed ? "(Taxed)" : "", Relation);
         }
     }
 }

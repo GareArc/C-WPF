@@ -23,7 +23,7 @@ namespace MVVM
             double p = double.Parse(PriceText);
             double q = double.Parse(QuantityText);
             bool t = TaxedText;
-            Item NewItem = new Item(p, q, t);
+            Item NewItem = new Item(p, q, t, SeletedItem);
             AddItemToLists(NewItem, Source);
             CloseWindow();
         }

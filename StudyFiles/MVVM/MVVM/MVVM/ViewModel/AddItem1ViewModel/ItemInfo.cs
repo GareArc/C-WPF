@@ -4,7 +4,7 @@ namespace MVVM
     partial class AddItem1ViewModel
     {
         private string _Price;
-        private string _Quantity;
+        private string _Quantity = "1";
         private bool _Taxed = false;
 
         public string PriceText

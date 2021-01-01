@@ -24,7 +24,7 @@ namespace MVVM
             bool t = TaxedText;
             int rid = RelationId;
             string r = Relation;
-            ItemShared item = new ItemShared(p, q, t, rid, r);
+            ItemShared item = new ItemShared(p, q, t, rid, r, SeletedItem);
             ItemLM.AddToTwoPeopleTotalList(item);
             CloseWindow();
         }
