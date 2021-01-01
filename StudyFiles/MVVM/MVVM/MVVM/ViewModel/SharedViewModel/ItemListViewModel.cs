@@ -4,16 +4,16 @@ using System.Windows;
 
 namespace MVVM
 {
-    class ItemListsManager : ViewModelbase
+    class ItemListViewModel : ViewModelbase
 
     {
-        public ItemListsManager() { }
+        public ItemListViewModel() { }
 
         #region GetInstance
-        private static ItemListsManager _Instance = null;
-        public static ItemListsManager GetInstance()
+        private static ItemListViewModel _Instance = null;
+        public static ItemListViewModel GetInstance()
         {
-            if (_Instance == null) _Instance = new ItemListsManager();
+            if (_Instance == null) _Instance = new ItemListViewModel();
             return _Instance;
         }
 

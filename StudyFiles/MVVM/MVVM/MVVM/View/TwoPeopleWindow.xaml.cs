@@ -19,7 +19,7 @@ namespace MVVM.View
     /// </summary>
     public partial class TwoPeopleWindow : Window
     {
-        private MainTwoPeopleItems mtp = new MainTwoPeopleItems();
+        private TwoPeopleWindowViewModel mtp = new TwoPeopleWindowViewModel();
         public TwoPeopleWindow()
         {
             InitializeComponent();

@@ -1,13 +1,13 @@
 ﻿using System.ComponentModel;
 namespace MVVM
 {
-    partial class AddItemWindowItems : INotifyPropertyChanged
+    partial class AddItem1ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private ItemListsManager ItemLM = ItemListsManager.GetInstance();
+        private ItemListViewModel ItemLM = ItemListViewModel.GetInstance();
 
 
-        public AddItemWindowItems(int source) 
+        public AddItem1ViewModel(int source) 
         { 
             Source = source;
             ComfirmCmd = new ConditionalCmd(Comfirm, CanComfirm);

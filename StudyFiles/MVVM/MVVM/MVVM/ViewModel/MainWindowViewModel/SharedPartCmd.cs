@@ -4,7 +4,7 @@ using System.Windows;
 
 namespace MVVM
 {
-    partial class MainWindowItems
+    partial class MainWindowViewModel
     {
         public ICommand dfCheck { get { return new UnconditionalCmd(dfCheckExecute); } }
         public ICommand wfCheck { get { return new UnconditionalCmd(wfCheckExecute); } }

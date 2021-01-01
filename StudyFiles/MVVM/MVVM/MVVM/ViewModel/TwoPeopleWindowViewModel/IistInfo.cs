@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MVVM
 {
-    partial class MainTwoPeopleItems
+    partial class TwoPeopleWindowViewModel
     {
         private int _SelectedIndex = 0;
         public int SelectedIndex{ get { return _SelectedIndex; } set { _SelectedIndex = value; } }

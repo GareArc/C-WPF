@@ -7,11 +7,11 @@ namespace MVVM
 {
     class PrintManager
     {
-        private MainWindowItems main;
-        private ItemListsManager im = ItemListsManager.GetInstance();
-        private UserManager um = UserManager.GetInstance();
+        private MainWindowViewModel main;
+        private ItemListViewModel im = ItemListViewModel.GetInstance();
+        private UserViewModel um = UserViewModel.GetInstance();
 
-        public PrintManager(MainWindowItems main) { this.main = main; }
+        public PrintManager(MainWindowViewModel main) { this.main = main; }
 
         public void Print()
         {

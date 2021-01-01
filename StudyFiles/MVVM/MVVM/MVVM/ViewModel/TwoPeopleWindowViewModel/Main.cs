@@ -4,21 +4,21 @@ using System.Collections.Generic;
 
 namespace MVVM
 {
-    partial class MainTwoPeopleItems : ViewModelbase
+    partial class TwoPeopleWindowViewModel : ViewModelbase
     {
         #region Private properties
-        private ItemListsManager _ItemLM = ItemListsManager.GetInstance();
-        private UserManager _um = UserManager.GetInstance();
+        private ItemListViewModel _ItemLM = ItemListViewModel.GetInstance();
+        private UserViewModel _um = UserViewModel.GetInstance();
         public Action CloseMainTwoPeopleWindow;
         private IWindowFactory WindowFactory = new WindowFactory();
         #endregion
 
         #region Public properties
-        public ItemListsManager ItemLM { get { return _ItemLM; } }
-        public UserManager um { get { return _um; } }
+        public ItemListViewModel ItemLM { get { return _ItemLM; } }
+        public UserViewModel um { get { return _um; } }
         #endregion
 
-        public MainTwoPeopleItems() 
+        public TwoPeopleWindowViewModel() 
         {
             // Inner notification
 

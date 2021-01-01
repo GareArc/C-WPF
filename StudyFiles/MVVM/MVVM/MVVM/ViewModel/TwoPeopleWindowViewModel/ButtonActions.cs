@@ -3,7 +3,7 @@ using System;
 
 namespace MVVM
 {
-    partial class MainTwoPeopleItems
+    partial class TwoPeopleWindowViewModel
     {
         # region AddButton
         public ICommand AddButtonCmd { get { return new UnconditionalCmd(OpenAddItemWindow); } }

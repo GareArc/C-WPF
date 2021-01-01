@@ -1,7 +1,7 @@
 ﻿
 namespace MVVM
 {
-    partial class MainAddItem2Items
+    partial class AddItem1ViewModel
     {
         private string _Price;
         private string _Quantity;
@@ -40,20 +40,6 @@ namespace MVVM
             {
                 this._Taxed = value;
             }
-        }
-
-        private int _RelationId;
-        public int RelationId
-        {
-            get { return _RelationId; }
-            set { _RelationId = value; }
-        }
-
-        private string _Relation;
-        public string Relation
-        {
-            get { return _Relation; }
-            set { _Relation = value; }
         }
 
     }

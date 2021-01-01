@@ -19,11 +19,11 @@ namespace MVVM.View
     /// </summary>
     public partial class Target1Window : Window
     {
-        private MainTarget1Items mt;
+        private Target1ViewModel mt;
         public Target1Window()
         {
             InitializeComponent();
-            mt = new MainTarget1Items(new Action(() => Close()));
+            mt = new Target1ViewModel(new Action(() => Close()));
             this.DataContext = mt;
         }
     }

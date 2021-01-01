@@ -3,7 +3,7 @@ using System;
 
 namespace MVVM
 {
-    partial class AddItemWindowItems
+    partial class AddItem1ViewModel
     {
         public ICommand ComfirmCmd { get; set; }
         public int Source;

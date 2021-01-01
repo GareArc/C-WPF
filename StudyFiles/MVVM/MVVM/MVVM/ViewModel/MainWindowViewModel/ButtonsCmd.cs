@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace MVVM
 {
-    partial class MainWindowItems
+    partial class MainWindowViewModel
     {
         #region AddItemButtonCmd
         public ICommand AddItemButtonCmd { get { return new UnconditionalCmd(OpenAddItemWindow); }}

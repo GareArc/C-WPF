@@ -19,11 +19,11 @@ namespace MVVM.View
     /// </summary>
     public partial class AddItemWindow : Window
     {
-        private AddItemWindowItems aw;
+        private AddItem1ViewModel aw;
         public AddItemWindow(int Source)
         {
             InitializeComponent();
-            aw = new AddItemWindowItems(Source);
+            aw = new AddItem1ViewModel(Source);
             DataContext = aw;
             aw.CloseWindow = new Action(() => this.Close());
 

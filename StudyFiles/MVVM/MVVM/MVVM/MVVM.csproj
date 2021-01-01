@@ -70,28 +70,28 @@
     <Compile Include="GateWay\PrintManager.cs" />
     <Compile Include="Model\ItemShared.cs" />
     <Compile Include="Model\User.cs" />
-    <Compile Include="ViewModel\AddItem2WindowBinding\ComfirmButtonCmd.cs" />
-    <Compile Include="ViewModel\AddItem2WindowBinding\ItemInfo.cs" />
-    <Compile Include="ViewModel\AddItem2WindowBinding\Main.cs" />
-    <Compile Include="ViewModel\MainWindowsItemBinding\ButtonsCmd.cs" />
-    <Compile Include="ViewModel\MainWindowsItemBinding\UserInfo.cs" />
-    <Compile Include="ViewModel\Shared\ItemListsManager.cs" />
-    <Compile Include="ViewModel\AddItemWindowBinding\MainAddItemWindowItems.cs" />
-    <Compile Include="ViewModel\AddItemWindowBinding\ComfirmButtonCmd.cs" />
+    <Compile Include="ViewModel\AddItem2ViewModel\ComfirmButtonCmd.cs" />
+    <Compile Include="ViewModel\AddItem2ViewModel\ItemInfo.cs" />
+    <Compile Include="ViewModel\AddItem2ViewModel\Main.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel\ButtonsCmd.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel\UserInfo.cs" />
+    <Compile Include="ViewModel\SharedViewModel\ItemListViewModel.cs" />
+    <Compile Include="ViewModel\AddItem1ViewModel\MainAddItemWindowItems.cs" />
+    <Compile Include="ViewModel\AddItem1ViewModel\ComfirmButtonCmd.cs" />
     <Compile Include="ViewModel\IWindowFactory.cs" />
-    <Compile Include="ViewModel\AddItemWindowBinding\ItemInfo.cs" />
-    <Compile Include="ViewModel\MainWindowsItemBinding\SharedPartCmd.cs" />
-    <Compile Include="ViewModel\MainWindowsItemBinding\MainWindowItems.cs" />
-    <Compile Include="ViewModel\Shared\UserManager.cs" />
-    <Compile Include="ViewModel\Target1WindowBinding\ButtonActoins.cs" />
-    <Compile Include="ViewModel\Target1WindowBinding\ItemListInfo.cs" />
-    <Compile Include="ViewModel\Target1WindowBinding\MainTarget1Items.cs" />
-    <Compile Include="ViewModel\Target2WindowBinding\ButtonActoins.cs" />
-    <Compile Include="ViewModel\Target2WindowBinding\ItemListInfo.cs" />
-    <Compile Include="ViewModel\Target2WindowBinding\MainTarget1Items.cs" />
-    <Compile Include="ViewModel\TwoPeopleWindowBinding\ButtonActions.cs" />
-    <Compile Include="ViewModel\TwoPeopleWindowBinding\IistInfo.cs" />
-    <Compile Include="ViewModel\TwoPeopleWindowBinding\Main.cs" />
+    <Compile Include="ViewModel\AddItem1ViewModel\ItemInfo.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel\SharedPartCmd.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel\MainWindowItems.cs" />
+    <Compile Include="ViewModel\SharedViewModel\UserViewModel.cs" />
+    <Compile Include="ViewModel\Target1ViewModel\ButtonActoins.cs" />
+    <Compile Include="ViewModel\Target1ViewModel\ItemListInfo.cs" />
+    <Compile Include="ViewModel\Target1ViewModel\MainTarget1Items.cs" />
+    <Compile Include="ViewModel\Target2ViewModel\ButtonActoins.cs" />
+    <Compile Include="ViewModel\Target2ViewModel\ItemListInfo.cs" />
+    <Compile Include="ViewModel\Target2ViewModel\MainTarget1Items.cs" />
+    <Compile Include="ViewModel\TwoPeopleWindowViewModel\ButtonActions.cs" />
+    <Compile Include="ViewModel\TwoPeopleWindowViewModel\IistInfo.cs" />
+    <Compile Include="ViewModel\TwoPeopleWindowViewModel\Main.cs" />
     <Compile Include="View\AddItem2Window.xaml.cs">
       <DependentUpon>AddItem2Window.xaml</DependentUpon>
     </Compile>
@@ -122,8 +122,8 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Model\Item.cs" />
-    <Compile Include="ViewModel\MainWindowsItemBinding\SharedPartInfo.cs" />
-    <Compile Include="ViewModel\MainWindowsItemBinding\ItemListInfo.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel\SharedPartInfo.cs" />
+    <Compile Include="ViewModel\MainWindowViewModel\ItemListInfo.cs" />
     <Compile Include="View\AddItemWindow.xaml.cs">
       <DependentUpon>AddItemWindow.xaml</DependentUpon>
     </Compile>

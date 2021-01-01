@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace MVVM
 {
-    partial class MainWindowItems
+    partial class MainWindowViewModel
     {
 
         private void UserMangerPropertyChanged(object sender, PropertyChangedEventArgs e) 

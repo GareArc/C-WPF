@@ -8,7 +8,7 @@ namespace MVVM.View
     /// </summary>
     public partial class MainWindow : Window
     {
-        private MainWindowItems mw = new MainWindowItems();
+        private MainWindowViewModel mw = new MainWindowViewModel();
         public MainWindow()
         {
             InitializeComponent();

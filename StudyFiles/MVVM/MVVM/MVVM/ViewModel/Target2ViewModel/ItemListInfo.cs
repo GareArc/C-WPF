@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace MVVM
 {
-    partial class MainTarget2Items
+    partial class Target2ViewModel
     {
         private int _SelectedIndex = -1;
         public int SelectedIndex

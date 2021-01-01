@@ -3,7 +3,7 @@ using System;
 
 namespace MVVM
 {
-    partial class MainAddItem2Items
+    partial class AddItem2ViewModel
     {
         public ICommand ComfirmCmd { get; set; }
         public Action CloseWindow { get; set; }

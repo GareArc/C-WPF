@@ -3,15 +3,15 @@ using System.ComponentModel;
 
 namespace MVVM
 {
-    class UserManager : ViewModelbase
+    class UserViewModel : ViewModelbase
     {
-        public UserManager() { }
+        public UserViewModel() { }
 
 
-        private static UserManager _Instance = null;
-        public static UserManager GetInstance() 
+        private static UserViewModel _Instance = null;
+        public static UserViewModel GetInstance() 
         {
-            if (_Instance == null) _Instance = new UserManager();
+            if (_Instance == null) _Instance = new UserViewModel();
             return _Instance;
         }
 

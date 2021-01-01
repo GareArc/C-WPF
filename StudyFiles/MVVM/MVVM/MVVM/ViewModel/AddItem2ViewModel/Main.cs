@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace MVVM
 {
-    partial class MainAddItem2Items : ViewModelbase
+    partial class AddItem2ViewModel : ViewModelbase
     {
-        private ItemListsManager ItemLM = ItemListsManager.GetInstance();
-        private UserManager um = UserManager.GetInstance();
-        public MainAddItem2Items(int rid, string r) 
+        private ItemListViewModel ItemLM = ItemListViewModel.GetInstance();
+        private UserViewModel um = UserViewModel.GetInstance();
+        public AddItem2ViewModel(int rid, string r) 
         {
             Relation = r;
             RelationId = rid;

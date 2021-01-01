@@ -6,7 +6,7 @@ using System.Windows.Controls;
 
 namespace MVVM
 {
-    partial class MainWindowItems
+    partial class MainWindowViewModel
     {
         private int _SeletedIndex = -1;
         public int SeletedIndex { get { return _SeletedIndex; } set { _SeletedIndex = value; } }

@@ -4,7 +4,7 @@ using System.Windows.Media;
 
 namespace MVVM
 {
-    partial class MainWindowItems
+    partial class MainWindowViewModel
     {
         private string _Df = "0";
         private string _Wf = "50.85";

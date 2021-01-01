@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace MVVM
 {
-    partial class MainTarget2Items
+    partial class Target1ViewModel
     {
         public ICommand AddButtonCmd { get { return new UnconditionalCmd(OpenAddItemWindow); } }
         public ICommand DeleteButtonCmd { get { return new ConditionalCmd(DeleteItemInList, CanDelete); } }
@@ -14,7 +14,7 @@ namespace MVVM
 
         private void OpenAddItemWindow(object parameter) 
         {
-            _WindowFactory.OpenAddItem1Window(2);
+            _WindowFactory.OpenAddItem1Window(1);
         }
 
         private bool CanDelete(object parameter) 
@@ -24,12 +24,12 @@ namespace MVVM
 
         private void DeleteItemInList(object parameter) 
         {
-            _ItemLM.DeleteInList2(SelectedIndex);
+            _ItemLM.DeleteInList1(SelectedIndex);
         }
 
         private void CloseWindow(object parameter) 
         {
-            CloseTarget2Window();
+            _CloseWindow();
         }
     }
 }
