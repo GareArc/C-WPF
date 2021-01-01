@@ -8,15 +8,15 @@ namespace MVVM
     partial class MainWindowItems
     {
         #region AddItemButtonCmd
-        public ICommand AddItemButtonCmd { get; set; }
+        public ICommand AddItemButtonCmd { get { return new UnconditionalCmd(OpenAddItemWindow); }}
         private void OpenAddItemWindow(object parameter)
         {
-            WindowFactory.OpenAddItem1Window(0);
+            _WindowFactory.OpenAddItem1Window(0);
         }
         #endregion
 
         #region CalculateFinalCmd
-        public ICommand CalculateFinalCmd { get; set; }
+        public ICommand CalculateFinalCmd { get { return new ConditionalCmd(CalculateFinal, CanCalculateFinal); }}
         private bool CanCalculateFinal(object parameter)
         {
             double a;
@@ -67,15 +67,15 @@ namespace MVVM
 
         private void ChangeTargetResults()
         {
-            Target1Result = string.Format("{0}总计: {1}", Target1User, Target1Total);
-            Target2Result = string.Format("{0}总计: {1}", Target2User, Target2Total);
+            Target1Result = string.Format("{0}总计: {1}", um.Target1User, Target1Total);
+            Target2Result = string.Format("{0}总计: {1}", um.Target2User, Target2Total);
             RaisePropertyChanged("Target2Result");
             RaisePropertyChanged("Target1Result");
         }
         #endregion
 
         #region DeleteItemButtonCmd
-        public ICommand DeleteItemButtonCmd { get; set; }
+        public ICommand DeleteItemButtonCmd { get { return new ConditionalCmd(DeleteItemFromSharedList, CanDeleteItemFromSharedList); } }
 
         private bool CanDeleteItemFromSharedList(object parameter)
         {
@@ -88,41 +88,41 @@ namespace MVVM
         #endregion
 
         #region Edit1Cmd
-        public ICommand Edit1Cmd { get; set; }
+        public ICommand Edit1Cmd { get { return new UnconditionalCmd(OpenTarget1Window); } }
         private void OpenTarget1Window(object parameter)
         {
-            WindowFactory.OpenNormalWindow(1);
+            _WindowFactory.OpenNormalWindow(1);
         }
         #endregion
 
         #region ResetButtonCmd
-        public ICommand ResetButtonCmd { get; set; }
+        public ICommand ResetButtonCmd { get { return new UnconditionalCmd(ResetAll); } }
         private void ResetAll(object parameter)
         {
             ItemListsM.ClearLists();
-            WindowFactory.OpenNormalWindow(0, false);
+            _WindowFactory.OpenNormalWindow(0, false);
             CloseMainWindow();
         }
         #endregion
 
         #region Edit2Cmd
-        public ICommand Edit2Cmd { get; set; }
+        public ICommand Edit2Cmd { get { return new UnconditionalCmd(OpenTarget2Window); } }
         private void OpenTarget2Window(object parameter)
         {
-            WindowFactory.OpenNormalWindow(2);
+            _WindowFactory.OpenNormalWindow(2);
         }
         #endregion
 
         #region Edit3Cmd
-        public ICommand Edit3Cmd { get; set; }
+        public ICommand Edit3Cmd { get { return new UnconditionalCmd(OpenTwoPeopleWindow); } }
         private void OpenTwoPeopleWindow(object parameter)
         {
-            WindowFactory.OpenNormalWindow(3);
+            _WindowFactory.OpenNormalWindow(3);
         }
         #endregion
 
         #region PrintInfoBtnCmd
-        public ICommand PrintInfoBtnCommand { get; set; }
+        public ICommand PrintInfoBtnCommand { get { return new UnconditionalCmd(PrintInfo); } }
 
         private void PrintInfo(object parameter) 
         {

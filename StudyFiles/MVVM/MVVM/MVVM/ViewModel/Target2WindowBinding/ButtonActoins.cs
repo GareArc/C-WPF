@@ -7,14 +7,14 @@ namespace MVVM
 {
     partial class MainTarget2Items
     {
-        public ICommand AddButtonCmd { get; set; }
-        public ICommand DeleteButtonCmd { get; set; }
+        public ICommand AddButtonCmd { get { return new UnconditionalCmd(OpenAddItemWindow); } }
+        public ICommand DeleteButtonCmd { get { return new ConditionalCmd(DeleteItemInList, CanDelete); } }
 
-        public ICommand ComfirmButtonCmd { get; set; }
+        public ICommand ComfirmButtonCmd { get { return new UnconditionalCmd(CloseWindow); } }
 
         private void OpenAddItemWindow(object parameter) 
         {
-            WindowFactory.OpenAddItem1Window(2);
+            _WindowFactory.OpenAddItem1Window(2);
         }
 
         private bool CanDelete(object parameter) 
@@ -24,7 +24,7 @@ namespace MVVM
 
         private void DeleteItemInList(object parameter) 
         {
-            ItemLM.DeleteInList2(SelectedIndex);
+            _ItemLM.DeleteInList2(SelectedIndex);
         }
 
         private void CloseWindow(object parameter) 

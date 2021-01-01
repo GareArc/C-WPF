@@ -6,16 +6,16 @@ namespace MVVM
     partial class MainTwoPeopleItems
     {
         # region AddButton
-        public ICommand AddButtonCmd { get; set; }
+        public ICommand AddButtonCmd { get { return new UnconditionalCmd(OpenAddItemWindow); } }
 
         private void OpenAddItemWindow(object parameter)
         {
-            WindowFactory.OpenAddItem2Window(SelectionIndex, ChoiceList[SelectionIndex]);
+            WindowFactory.OpenAddItem2Window(SelectedIndex, ChoiceList[SelectedIndex]);
         }
         #endregion
 
         #region DeleteButton
-        public ICommand DeleteBtnCmd { get; set; }
+        public ICommand DeleteBtnCmd { get { return new ConditionalCmd(DeleteItem, CanDeleteItem); } }
 
         private void DeleteItem(object parameter) 
         {
@@ -29,7 +29,7 @@ namespace MVVM
         #endregion
 
         #region ConfirmButton
-        public ICommand ConfirmButtonCmd { get; set; }
+        public ICommand ConfirmButtonCmd { get { return new UnconditionalCmd(CloseWindow); } }
 
         private void CloseWindow(object parameter) 
         {

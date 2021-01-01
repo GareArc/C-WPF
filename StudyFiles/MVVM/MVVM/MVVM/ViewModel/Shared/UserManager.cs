@@ -23,7 +23,7 @@ namespace MVVM
         public User.UsersTypes Target1User
         {
             get { return _Target1User; }
-            set { _Target1User = value; }
+            set { _Target1User = value;}
         }
 
         public User.UsersTypes Target2User

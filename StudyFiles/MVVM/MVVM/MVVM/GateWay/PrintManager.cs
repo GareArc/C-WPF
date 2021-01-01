@@ -35,14 +35,14 @@ namespace MVVM
             // Individual part
             txt.AppendLine("================= 个人部分 =================");
             // Target 1
-            txt.AppendLine(string.Format("{0} 部分:\n", um.Target1User));
+            txt.AppendLine(string.Format("\n{0} 部分:", um.Target1User));
             foreach (var item in im.ItemList1)
             {
                 txt.AppendLine(item.ToString());
             }
 
             // Target 2
-            txt.AppendLine(string.Format("{0} 部分:\n", um.Target2User));
+            txt.AppendLine(string.Format("\n{0} 部分:", um.Target2User));
             foreach (var item in im.ItemList2)
             {
                 txt.AppendLine(item.ToString());

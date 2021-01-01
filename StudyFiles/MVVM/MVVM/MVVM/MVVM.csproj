@@ -86,15 +86,12 @@
     <Compile Include="ViewModel\Target1WindowBinding\ButtonActoins.cs" />
     <Compile Include="ViewModel\Target1WindowBinding\ItemListInfo.cs" />
     <Compile Include="ViewModel\Target1WindowBinding\MainTarget1Items.cs" />
-    <Compile Include="ViewModel\Target1WindowBinding\UserInfo.cs" />
     <Compile Include="ViewModel\Target2WindowBinding\ButtonActoins.cs" />
     <Compile Include="ViewModel\Target2WindowBinding\ItemListInfo.cs" />
     <Compile Include="ViewModel\Target2WindowBinding\MainTarget1Items.cs" />
-    <Compile Include="ViewModel\Target2WindowBinding\UserInfo.cs" />
     <Compile Include="ViewModel\TwoPeopleWindowBinding\ButtonActions.cs" />
-    <Compile Include="ViewModel\TwoPeopleWindowBinding\ItemListInfo.cs" />
+    <Compile Include="ViewModel\TwoPeopleWindowBinding\IistInfo.cs" />
     <Compile Include="ViewModel\TwoPeopleWindowBinding\Main.cs" />
-    <Compile Include="ViewModel\TwoPeopleWindowBinding\UserInfo.cs" />
     <Compile Include="View\AddItem2Window.xaml.cs">
       <DependentUpon>AddItem2Window.xaml</DependentUpon>
     </Compile>

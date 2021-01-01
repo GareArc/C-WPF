@@ -6,12 +6,12 @@ namespace MVVM
 {
     partial class MainWindowItems
     {
-        public ICommand dfCheck { get; set; }
-        public ICommand wfCheck { get; set; }
-        public ICommand amzCheck { get; set; }
-        public ICommand amzpCheck { get; set; }
-        public ICommand wmCheck { get; set; }
-        public ICommand qtCheck { get; set; }
+        public ICommand dfCheck { get { return new UnconditionalCmd(dfCheckExecute); } }
+        public ICommand wfCheck { get { return new UnconditionalCmd(wfCheckExecute); } }
+        public ICommand amzCheck { get { return new UnconditionalCmd(amzCheckExecute); } }
+        public ICommand amzpCheck { get { return new UnconditionalCmd(amzpCheckExecute); } }
+        public ICommand wmCheck { get { return new UnconditionalCmd(wmCheckExecute); } }
+        public ICommand qtCheck { get { return new UnconditionalCmd(qtCheckExecute); } }
 
         private void dfCheckExecute(object parameter) 
         {

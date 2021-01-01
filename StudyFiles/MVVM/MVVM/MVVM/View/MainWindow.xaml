@@ -67,7 +67,7 @@
                     </StackPanel>
                     <!--Shared ListView-->
                     <TextBlock Text="列表:" Margin="0 5 0 5"/>
-                    <ListView SelectedIndex="{Binding SeletedIndex, Mode=TwoWay}" SelectionMode="Single" ItemsSource="{Binding SharedList}" MaxHeight="120" Height="120"/>
+                    <ListView SelectedIndex="{Binding SeletedIndex, Mode=TwoWay}" SelectionMode="Single" ItemsSource="{Binding ItemListsM.SharedList}" MaxHeight="120" Height="120"/>
                 </StackPanel>
                 <!--Individual Part-->
                 <StackPanel Grid.Column="1" Margin="0 5 0 0">
@@ -82,12 +82,12 @@
                         </Grid.ColumnDefinitions>
                         <!--Target 1-->
                         <StackPanel Grid.Column="0">
-                            <ComboBox Background="LightGray" SelectedItem="{Binding Target1User, Mode=TwoWay}" ItemsSource="{Binding SelectionBox}" Margin="0 0 5 5"/>
+                            <ComboBox Background="LightGray" SelectedItem="{Binding um.Target1User, Mode=TwoWay}" ItemsSource="{Binding um.SelectionBox}" Margin="0 0 5 5"/>
                             <Button Command="{Binding Edit1Cmd}" Content="编辑" HorizontalAlignment="Left" Margin="5 10 0 10"/>
                         </StackPanel>
                         <!--Target 2-->
                         <StackPanel Grid.Column="1">
-                            <ComboBox Background="LightGray" SelectedItem="{Binding Target2User, Mode=TwoWay}" ItemsSource="{Binding SelectionBox}" Margin="0 0 5 5"/>
+                            <ComboBox Background="LightGray" SelectedItem="{Binding um.Target2User, Mode=TwoWay}" ItemsSource="{Binding um.SelectionBox}" Margin="0 0 5 5"/>
                             <Button Command="{Binding Edit2Cmd}" Content="编辑" HorizontalAlignment="Left" Margin="5 10 0 10"/>
                         </StackPanel>
                         <!--Two-People Part-->
