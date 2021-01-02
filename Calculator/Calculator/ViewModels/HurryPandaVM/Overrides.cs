@@ -4,41 +4,8 @@ namespace Calculator
 {
     partial class HurryPandaVM
     {
-        public override BasicItem CreateBasicItem()
-        {
-            // Open AddItemWindow
-            windowF.OpenAddItemWindow();
-
-            // Check if there's new item being added
-            if (!globalVM.AddedNewItem) return null;
-
-            // New item is added, so get the info
-            double price = globalVM.LastItemPrice;
-            double quantity = globalVM.LastItemQuantity;
-            bool taxed = globalVM.LastItemIsTaxed;
-
-            // Update item info and create new item
-            globalVM.AddedNewItem = false;
-            return new BasicItem(price, quantity, taxed, GLOBAL.HURRYPANDA_SERVICE_WEIGHT, ShopName);
-        }
-
-        public override SharedItem CreateSharedItem()
-        {
-            // Open AddItemWindow
-            windowF.OpenAddItemWindow();
-
-            // Check if there's new item being added
-            if (!globalVM.AddedNewItem) return null;
-
-            // New item is added, so get the info
-            double price = globalVM.LastItemPrice;
-            double quantity = globalVM.LastItemQuantity;
-            bool taxed = globalVM.LastItemIsTaxed;
-
-            // Update item info and create new item
-            globalVM.AddedNewItem = false;
-            return new SharedItem(price, quantity, taxed, GLOBAL.HURRYPANDA_SERVICE_WEIGHT, 
-                GetRelationType(), ChoiceList_Relation[SeletedIndex_Relation], ShopName);
-        }
+        public override Shops ShopType => Shops.HurryPanda;
+        public override double Weight => GLOBAL.HURRYPANDA_SERVICE_WEIGHT;
+        public override string ShopName => GLOBAL.GetDescription(Shops.HurryPanda);
     }
 }

@@ -74,7 +74,6 @@
     <Compile Include="ViewModels\AddItemVM\AddItemVM.cs" />
     <Compile Include="ViewModels\AddItemVM\Buttons.cs" />
     <Compile Include="ViewModels\AddItemVM\Item.cs" />
-    <Compile Include="ViewModels\CustomShopVM\BasicInfo.cs" />
     <Compile Include="ViewModels\CustomShopVM\CustomShopVM.cs" />
     <Compile Include="ViewModels\CustomShopVM\Overrides.cs" />
     <Compile Include="ViewModels\GlobalVM\AddItemResult.cs" />
@@ -82,10 +81,8 @@
     <Compile Include="ViewModels\GlobalVM\GlobalVM.cs" />
     <Compile Include="ViewModels\GlobalVM\ItemLists.cs" />
     <Compile Include="ViewModels\GlobalVM\UserInfo.cs" />
-    <Compile Include="ViewModels\HurryPandaVM\BasicInfo.cs" />
     <Compile Include="ViewModels\HurryPandaVM\Overrides.cs" />
     <Compile Include="ViewModels\HurryPandaVM\HurryPandaVM.cs" />
-    <Compile Include="ViewModels\JNCShopVM\BasicInfo.cs" />
     <Compile Include="ViewModels\JNCShopVM\JNCShopVM.cs" />
     <Compile Include="ViewModels\JNCShopVM\Overrides.cs" />
     <Compile Include="ViewModels\MainWindowVM\BaiscPart.cs" />
@@ -93,7 +90,6 @@
     <Compile Include="ViewModels\MainWindowVM\ResultPart.cs" />
     <Compile Include="ViewModels\MainWindowVM\ShopPartInfo.cs" />
     <Compile Include="ViewModels\MainWindowVM\UserPart.cs" />
-    <Compile Include="ViewModels\UberEatsVM\BasicInfo.cs" />
     <Compile Include="ViewModels\UberEatsVM\UberEatsVM.cs" />
     <Compile Include="ViewModels\UberEatsVM\Overrides.cs" />
     <Compile Include="View\AddItemWindow.xaml.cs">

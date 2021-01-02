@@ -12,7 +12,7 @@ namespace Calculator
         public GlobalVM globalVM { get; set; } = GlobalVM.GetInstance();
         public IWindowFactory windowF;
         public Action CloseWindow;
-        public ShopVMBase(IWindowFactory windowF) 
+        public ShopVMBase(IWindowFactory windowF)
         {
             this.windowF = windowF;
             UpdateChoiceList();
@@ -24,6 +24,8 @@ namespace Calculator
 
         #region Basic Info
         public virtual Shops ShopType { get; } = Shops.CustomShop;
+        public virtual string ShopName { get; } = "Unknow Shop";
+        public virtual double Weight { get; } = 0;
         #endregion
 
         #region Additional fees
@@ -68,8 +70,41 @@ namespace Calculator
         #endregion
 
         #region Common Cmds
-        public virtual BasicItem CreateBasicItem() { MessageBox.Show("没有override创建物品method(Basic)"); return null; }
-        public virtual SharedItem CreateSharedItem() { MessageBox.Show("没有override创建物品method(Shared)"); return null; }
+        public virtual BasicItem CreateBasicItem()
+        {
+            // Open AddItemWindow
+            windowF.OpenAddItemWindow();
+
+            // Check if there's new item being added
+            if (!globalVM.AddedNewItem) return null;
+
+            // New item is added, so get the info
+            double price = globalVM.LastItemPrice;
+            double quantity = globalVM.LastItemQuantity;
+            bool taxed = globalVM.LastItemIsTaxed;
+
+            // Update item info and create new item
+            globalVM.AddedNewItem = false;
+            return new BasicItem(price, quantity, taxed, Weight, ShopName);
+        }
+        public virtual SharedItem CreateSharedItem()
+        {
+            // Open AddItemWindow
+            windowF.OpenAddItemWindow();
+
+            // Check if there's new item being added
+            if (!globalVM.AddedNewItem) return null;
+
+            // New item is added, so get the info
+            double price = globalVM.LastItemPrice;
+            double quantity = globalVM.LastItemQuantity;
+            bool taxed = globalVM.LastItemIsTaxed;
+
+            // Update item info and create new item
+            globalVM.AddedNewItem = false;
+            return new SharedItem(price, quantity, taxed, Weight,
+                GetRelationType(), ChoiceList_Relation[SeletedIndex_Relation], ShopName);
+        }
 
         public void SetCloseWindowAction(Action CloseWindow) 
         {
