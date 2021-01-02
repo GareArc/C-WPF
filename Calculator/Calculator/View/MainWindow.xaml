@@ -4,9 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
+        xmlns:converter ="clr-namespace:Calculator.View.Converters"
         mc:Ignorable="d"
         WindowStartupLocation="CenterScreen"
         Title="主界面" Height="450" Width="800">
+    <Window.Resources>
+        <converter:EnumDescriptionConverter x:Key="EnumC"/>
+    </Window.Resources>
     <Border Margin="5">
         <StackPanel>
             <!--Title-->
@@ -14,7 +18,13 @@
             <!--Shop-->
             <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                 <TextBlock Text="选择商店: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-                <ComboBox SelectedItem="{Binding SeletedItem_Shop, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Shops}" Margin="10 0 0 0" Width="320" Height="30" FontSize="16"/>
+                <ComboBox SelectedItem="{Binding SeletedItem_Shop, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Shops}" Margin="10 0 0 0" Width="320" Height="30" FontSize="16">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumC}}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
                 <Button Command="{Binding ShopBtnCmd}" Content="编辑" Margin="20 0 0 0" FontSize="18"/>
             </StackPanel>
             <!--Body-->

@@ -3,7 +3,7 @@ namespace Calculator
 {
     partial class JNCShopVM
     {
-        public string ShopName { get; } = "金牛城(Online)";
+        public string ShopName { get; } = GLOBAL.GetDescription(Shops.JinNiuCheng);
         public override Shops ShopType => Shops.JinNiuCheng;
     }
 }
