@@ -18,3 +18,4 @@ F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\View\AddItemWindow.g.cs
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\View\ShopNormalWindow.g.cs
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\View\AddItemWindow.baml
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\View\ShopNormalWindow.baml
+F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs

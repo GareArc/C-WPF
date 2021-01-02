@@ -35,7 +35,7 @@ namespace Calculator
             txt.AppendLine("================= 商店额外 =================");
             foreach (var k in GlobalVM.ShopTips.Keys) 
             {
-                txt.AppendLine(string.Format("商店: {0} | 小费: {1}, 其他: {2}", k, GlobalVM.ShopTips[k], GlobalVM.ShopOthers[k]));
+                txt.AppendLine(string.Format("{0} | 小费: {1}, 其他: {2}", GLOBAL.GetDescription(k), GlobalVM.ShopTips[k], GlobalVM.ShopOthers[k]));
             }
             
             txt.AppendLine("================= 购物部分 =================");
