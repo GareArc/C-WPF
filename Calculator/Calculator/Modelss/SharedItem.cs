@@ -9,7 +9,7 @@ namespace Calculator
     public class SharedItem : BasicItem, ShoppingItem
     {
         public SharedItem(double Price, double Quantity, bool IsTaxed, double Weight, 
-            Relation RelationType, string Relation, string ShopInfo) : base(Price,Quantity,IsTaxed,Weight, ShopInfo)
+            Relation RelationType, string Relation, string ShopInfo) : base(Price / 2,Quantity,IsTaxed,Weight, ShopInfo)
         {
             this.Relation = Relation;
             this.RelationType = RelationType;
@@ -21,12 +21,12 @@ namespace Calculator
 
         public override string ToString()
         {
-            return base.ToString() + string.Format("[{0}]", Relation);
+            return base.ToString() + string.Format("[{0} 原价:{1}]", Relation, Price * 2);
         }
 
         public override double Calculate()
         {
-            return base.Calculate() / 2;
+            return base.Calculate();
         }
     }
 }
