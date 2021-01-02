@@ -25,7 +25,7 @@ namespace Calculator
 
         public override string ToString()
         {
-            return string.Format("[{0}]${1} * {2} {3}", ShopInfo, Price, Quantity, IsTaxed ? "(Taxed)" : "");
+            return string.Format("[{0}+{1}%]${2} * {3} {4}", ShopInfo, Weight, Price, Quantity, IsTaxed ? "(Taxed)" : "");
         }
 
         public virtual double Calculate()
