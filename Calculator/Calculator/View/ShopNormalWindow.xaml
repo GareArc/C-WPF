@@ -1,0 +1,83 @@
+﻿<Window x:Class="Calculator.View.ShopNormal"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator.View"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ShopNormal" Height="500" Width="800">
+    <Border Margin="5">
+        <StackPanel>
+            <TextBlock Text="{Binding ShopName}" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
+            <!--Body-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Three people-->
+                <StackPanel Grid.Column="0">
+                    <TextBlock Text="三人部分" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                    <!--Buttons-->
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Button Command="{Binding SharedAddBtnCmd}" Content="添加" Margin="20 0 0 0" FontSize="18"/>
+                        <Button Command="{Binding SharedDeleteBtnCmd}" Content="删除" Margin="70 0 0 0" FontSize="18"/>
+                    </StackPanel>
+                    <!--ViewList-->
+                    <ListView SelectedItem="{Binding SeletedItem_SharedList, Mode=TwoWay}" ItemsSource="{Binding SharedList}" Margin="0 10 0 0" Height="240" MaxHeight="240"/>
+                </StackPanel>
+                <!--Target 1-->
+                <StackPanel Grid.Column="1">
+                    <TextBlock Text="{Binding globalVM.Target1}" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                    <!--Buttons-->
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Button Command="{Binding Target1ListAddBtnCmd}" Content="添加" Margin="20 0 0 0" FontSize="18"/>
+                        <Button Command="{Binding Target1ListDeleteBtnCmd}" Content="删除" Margin="70 0 0 0" FontSize="18"/>
+                    </StackPanel>
+                    <!--ViewList-->
+                    <ListView SelectedItem="{Binding SeletedItem_Target1List, Mode=TwoWay}" ItemsSource="{Binding Target1List}" Margin="0 10 0 0" Height="240" MaxHeight="240"/>
+                </StackPanel>
+                <!--Target 2-->
+                <StackPanel Grid.Column="2">
+                    <TextBlock Text="{Binding globalVM.Target2}" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                    <!--Buttons-->
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Button Command="{Binding Target2ListAddBtnCmd}" Content="添加" Margin="20 0 0 0" FontSize="18"/>
+                        <Button Command="{Binding Target2ListDeleteBtnCmd}" Content="删除" Margin="70 0 0 0" FontSize="18"/>
+                    </StackPanel>
+                    <!--ViewList-->
+                    <ListView SelectedItem="{Binding SeletedItem_Target2List, Mode=TwoWay}" ItemsSource="{Binding Target2List}" Margin="0 10 0 0" Height="240" MaxHeight="240"/>
+                </StackPanel>
+                <!--TwoPeople-->
+                <StackPanel Grid.Column="3">
+                    <TextBlock Text="双人部分" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                    <!--Combobox-->
+                    <ComboBox SelectedIndex="{Binding SeletedIndex_Relation, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Relation}" Margin="0 13 0 0" Height="25"/>
+                    <!--Buttons-->
+                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                        <Button Command="{Binding TwoPeopleAddCmd}" Content="添加" Margin="20 0 0 0" FontSize="18"/>
+                        <Button Command="{Binding TwoPeopleDeleteCmd}" Content="删除" Margin="70 0 0 0" FontSize="18"/>
+                    </StackPanel>
+                    <!--ViewList-->
+                    <ListView SelectedItem="{Binding SeletedItem_TwoPeopleList, Mode=TwoWay}" ItemsSource="{Binding TwoPeopleList}" Margin="0 10 0 0" Height="203" MaxHeight="203"/>
+                </StackPanel>
+            </Grid>
+            <!--Other-->
+            <StackPanel Orientation="Horizontal" Margin=" 0 10 0 0">
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
+                    <TextBlock Text="小费" Margin="0 0 0 0" FontSize="18"/>
+                    <TextBox Text="{Binding Tip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="20 0 0 0">
+                    <TextBlock Text="其他" Margin="0 0 0 0" FontSize="18"/>
+                    <TextBox Text="{Binding Other, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                </StackPanel>
+            </StackPanel>
+            <!--Close-->
+            <Button Command="{Binding ConfirmCmd, UpdateSourceTrigger=PropertyChanged}" Content="完成" Width="80" HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="20"/>
+        </StackPanel>
+    </Border>
+</Window>

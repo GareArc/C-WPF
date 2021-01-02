@@ -5,8 +5,86 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+        WindowStartupLocation="CenterScreen"
+        Title="主界面" Height="450" Width="800">
+    <Border Margin="5">
+        <StackPanel>
+            <!--Title-->
+            <TextBlock Text="三人计算器重制版" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
+            <!--Shop-->
+            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                <TextBlock Text="选择商店: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                <ComboBox SelectedItem="{Binding SeletedItem_Shop, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Shops}" Margin="10 0 0 0" Width="320" Height="30" FontSize="16"/>
+                <Button Command="{Binding ShopBtnCmd}" Content="编辑" Margin="20 0 0 0" FontSize="18"/>
+            </StackPanel>
+            <!--Body-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="基础部分" Grid.Column="0" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                <TextBlock Text="三人部分" Grid.Column="1" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                <TextBlock Text="个人部分" Grid.Column="2" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+            </Grid>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <!--Attributes-->
+                <StackPanel Margin="10" Grid.Column="0">
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                        <TextBlock Text="电费" Margin="0 0 10 0" FontSize="18"/>
+                        <TextBox Text="{Binding DF, Mode=TwoWay}" Margin="50 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                        <TextBlock Text="网费" Margin="0 0 10 0" FontSize="18"/>
+                        <TextBox Text="{Binding WF, Mode=TwoWay}" Margin="50 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                        <TextBlock Text="Amz费" Margin="0 0 10 0" FontSize="18"/>
+                        <TextBox Text="{Binding AMZ, Mode=TwoWay}" Margin="30 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                        <TextBlock Text="Amz会员" Margin="0 0 10 0" FontSize="18"/>
+                        <TextBox Text="{Binding AMZP, Mode=TwoWay}" Margin="12 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                        <TextBlock Text="外卖费" Margin="0 0 10 0" FontSize="18"/>
+                        <TextBox Text="{Binding WM, Mode=TwoWay}" Margin="32 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                        <TextBlock Text="其他" Margin="0 0 10 0" FontSize="18"/>
+                        <TextBox Text="{Binding QT, Mode=TwoWay}" Margin="50 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                    </StackPanel>
+                </StackPanel>
+                <!--Three people part-->
+                <ListView ItemsSource="{Binding globalVM.SharedListTotal}" Grid.Column="1" Height="211" MaxHeight="211"/>
+                <!--Target 1 part-->
+                <StackPanel Grid.Column="2">
+                    <ComboBox SelectedItem="{Binding globalVM.Target1}" ItemsSource="{Binding ChoiceList_Users}"/>
+                    <ListView ItemsSource="{Binding globalVM.Target1ListTotal}" Height="190" MaxHeight="190"/>
+                </StackPanel>
+                <!--Target 3 part-->
+                <StackPanel Grid.Column="3">
+                    <ComboBox SelectedItem="{Binding globalVM.Target2}" ItemsSource="{Binding ChoiceList_Users}"/>
+                    <ListView ItemsSource="{Binding globalVM.Target2ListTotal}" Grid.Column="3" Height="190" MaxHeight="190"/>
+                </StackPanel>
+            </Grid>
+            <!--Calculate part-->
+            <!--Title-->
+            <TextBlock Text="结算部分: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+            <StackPanel Margin="0 20 0 0" Orientation="Horizontal">
+                <Button Command="{Binding CalculateBtnCmd}" Content="结算" Margin="20 0 0 0" FontSize="18"/>
+                <Button Command="{Binding ClearBtnCmd}" Content="清空" Margin="20 0 0 0" FontSize="18"/>
+                <Button Command="{Binding ExportBtnCmd}" Content="导出" Margin="20 0 0 0" FontSize="18"/>
+                <TextBlock Text="{Binding User1Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="250" Margin="40 0 0 0"/>
+                <TextBlock Text="{Binding User2Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="250" Margin="40 0 0 0"/>
+            </StackPanel>
+        </StackPanel>
+    </Border>
 </Window>

@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\PropertyChanged.Fody.3.3.1\build\PropertyChanged.Fody.props" Condition="Exists('..\packages\PropertyChanged.Fody.3.3.1\build\PropertyChanged.Fody.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -14,6 +15,8 @@
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -34,7 +37,13 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>New_ico.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PropertyChanged, Version=3.3.1.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
+      <HintPath>..\packages\PropertyChanged.Fody.3.3.1\lib\net40\PropertyChanged.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,6 +64,50 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Base\ShopVMBase\IShopVM.cs" />
+    <Compile Include="Base\UnconditionalCmd.cs" />
+    <Compile Include="Base\ConditionalCmd.cs" />
+    <Compile Include="GateWay\PrintGateway.cs" />
+    <Compile Include="Modelss\Relation.cs" />
+    <Compile Include="Modelss\Shops.cs" />
+    <Compile Include="Modelss\Users.cs" />
+    <Compile Include="ViewModels\AddItemVM\AddItemVM.cs" />
+    <Compile Include="ViewModels\AddItemVM\Buttons.cs" />
+    <Compile Include="ViewModels\AddItemVM\Item.cs" />
+    <Compile Include="ViewModels\CustomShopVM\BasicInfo.cs" />
+    <Compile Include="ViewModels\CustomShopVM\CustomShopVM.cs" />
+    <Compile Include="ViewModels\CustomShopVM\Overrides.cs" />
+    <Compile Include="ViewModels\GlobalVM\AddItemResult.cs" />
+    <Compile Include="ViewModels\GlobalVM\ShopInfo.cs" />
+    <Compile Include="ViewModels\GlobalVM\GlobalVM.cs" />
+    <Compile Include="ViewModels\GlobalVM\ItemLists.cs" />
+    <Compile Include="ViewModels\GlobalVM\UserInfo.cs" />
+    <Compile Include="ViewModels\HurryPandaVM\BasicInfo.cs" />
+    <Compile Include="ViewModels\HurryPandaVM\Overrides.cs" />
+    <Compile Include="ViewModels\HurryPandaVM\HurryPandaVM.cs" />
+    <Compile Include="ViewModels\JNCShopVM\BasicInfo.cs" />
+    <Compile Include="ViewModels\JNCShopVM\JNCShopVM.cs" />
+    <Compile Include="ViewModels\JNCShopVM\Overrides.cs" />
+    <Compile Include="ViewModels\MainWindowVM\BaiscPart.cs" />
+    <Compile Include="ViewModels\MainWindowVM\MainWindowVM.cs" />
+    <Compile Include="ViewModels\MainWindowVM\ResultPart.cs" />
+    <Compile Include="ViewModels\MainWindowVM\ShopPartInfo.cs" />
+    <Compile Include="ViewModels\MainWindowVM\UserPart.cs" />
+    <Compile Include="ViewModels\UberEatsVM\BasicInfo.cs" />
+    <Compile Include="ViewModels\UberEatsVM\UberEatsVM.cs" />
+    <Compile Include="ViewModels\UberEatsVM\Overrides.cs" />
+    <Compile Include="View\AddItemWindow.xaml.cs">
+      <DependentUpon>AddItemWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\IWindowFactory.cs" />
+    <Compile Include="View\ShopNormalWindow.xaml.cs">
+      <DependentUpon>ShopNormalWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WindowFactory.cs" />
+    <Page Include="View\AddItemWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +116,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Base\SourceWindowVMBase.cs" />
+    <Compile Include="Modelss\GLOBAL.cs" />
+    <Compile Include="Modelss\BasicItem.cs" />
+    <Compile Include="Base\ShopVMBase\ShopVMBase.cs" />
     <Compile Include="Base\ViewModelBase.cs" />
+    <Compile Include="Modelss\SharedItem.cs" />
+    <Compile Include="Modelss\ShoppingItem.cs" />
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="View\ShopNormalWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -88,6 +149,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -96,5 +158,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Pic\New_ico.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="New_ico.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\packages\Fody.6.3.0\build\Fody.targets" Condition="Exists('..\packages\Fody.6.3.0\build\Fody.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Fody.6.3.0\build\Fody.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Fody.6.3.0\build\Fody.targets'))" />
+    <Error Condition="!Exists('..\packages\PropertyChanged.Fody.3.3.1\build\PropertyChanged.Fody.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\PropertyChanged.Fody.3.3.1\build\PropertyChanged.Fody.props'))" />
+  </Target>
 </Project>

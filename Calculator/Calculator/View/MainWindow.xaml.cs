@@ -22,6 +22,8 @@ namespace Calculator.View
     {
         public MainWindow()
         {
+            MainWindowVM content = new MainWindowVM(new Action(() => Close()));
+            DataContext = content;
             InitializeComponent();
         }
     }

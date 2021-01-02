@@ -6,8 +6,11 @@ using System.Threading.Tasks;
 
 namespace Calculator
 {
-    class SourceWindowVMBase : ViewModelBase
+    partial class CustomShopVM : ShopVMBase
     {
-       
+        public CustomShopVM(IWindowFactory windowF) : base(windowF)
+        {
+            
+        }
     }
 }
