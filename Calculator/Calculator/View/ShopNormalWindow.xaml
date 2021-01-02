@@ -55,7 +55,7 @@
                 <StackPanel Grid.Column="3">
                     <TextBlock Text="双人部分" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
                     <!--Combobox-->
-                    <ComboBox SelectedIndex="{Binding SeletedIndex_Relation, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Relation}" Margin="0 13 0 0" Height="25"/>
+                    <ComboBox SelectedIndex="{Binding SeletedIndex_Relation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding ChoiceList_Relation}" Margin="0 13 0 0" Height="25"/>
                     <!--Buttons-->
                     <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
                         <Button Command="{Binding TwoPeopleAddCmd}" Content="添加" Margin="20 0 0 0" FontSize="18"/>

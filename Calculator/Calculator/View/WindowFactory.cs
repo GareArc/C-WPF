@@ -14,12 +14,14 @@ namespace Calculator
         {
             ResetAllWindows();
         }
+        #region Singleton    
         private static WindowFactory _Instance;
         public static WindowFactory GetInstance() 
         {
             if (_Instance == null) _Instance = new WindowFactory();
             return _Instance;
         }
+        #endregion
 
         #region Instances
         private CustomShopVM CustomShopVM;

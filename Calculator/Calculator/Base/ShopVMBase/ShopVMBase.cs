@@ -63,6 +63,7 @@ namespace Calculator
                 string.Format("我和{0}", globalVM.Target2),
                 string.Format("{0}和{1}", globalVM.Target1, globalVM.Target2)
             };
+            SeletedIndex_Relation = 0;
         }
         #endregion
 
