@@ -40,11 +40,5 @@ namespace Calculator
             return new SharedItem(price, quantity, taxed, GLOBAL.JNC_SERVICE_WEIGHT, 
                 GetRelationType(), ChoiceList_Relation[SeletedIndex_Relation], ShopName);
         }
-        public override void Confirm(object parameter)
-        {
-            globalVM.JNCShopTip = double.Parse(Tip);
-            globalVM.JNCShopOther = double.Parse(Other);
-            CloseWindow();
-        }
     }
 }

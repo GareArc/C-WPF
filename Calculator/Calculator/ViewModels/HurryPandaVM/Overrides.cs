@@ -40,11 +40,5 @@ namespace Calculator
             return new SharedItem(price, quantity, taxed, GLOBAL.HURRYPANDA_SERVICE_WEIGHT, 
                 GetRelationType(), ChoiceList_Relation[SeletedIndex_Relation], ShopName);
         }
-        public override void Confirm(object parameter)
-        {
-            globalVM.HurryPandaTip = double.Parse(Tip);
-            globalVM.HurryPandaOther = double.Parse(Other);
-            CloseWindow();
-        }
     }
 }

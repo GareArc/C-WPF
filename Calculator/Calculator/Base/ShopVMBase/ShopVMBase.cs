@@ -22,6 +22,10 @@ namespace Calculator
 
         }
 
+        #region Basic Info
+        public virtual Shops ShopType { get; } = Shops.CustomShop;
+        #endregion
+
         #region Additional fees
         public virtual string Tip { get; set; } = "0";
         public virtual string Other { get; set; } = "0";
@@ -88,8 +92,8 @@ namespace Calculator
         private bool CanDeleteFromSharedList(object parameter) { return SeletedItem_SharedList != null; }
         private void DeleteFromSharedList(object parameter) 
         {
+            globalVM.DeleteFromSharedListTotal(SeletedItem_SharedList);
             SharedList.Remove(SeletedItem_SharedList);
-            globalVM.DeleteFromSharedListTotal(SeletedItem_SharedList); 
         }
         #endregion
 
@@ -108,8 +112,8 @@ namespace Calculator
         private bool CanDeleteFromTarget1List(object parameter) { return SeletedItem_Target1List != null; }
         private void DeleteFromTarget1List(object parameter) 
         {
+            globalVM.DeleteFromTarget1ListTotal(SeletedItem_Target1List);
             Target1List.Remove(SeletedItem_Target1List);
-            globalVM.DeleteFromTarget1ListTotal(SeletedItem_Target1List); 
         }
         #endregion
 
@@ -128,8 +132,8 @@ namespace Calculator
         private bool CanDeleteFromTarget2List(object parameter) { return SeletedItem_Target2List != null; }
         private void DeleteFromTarget2List(object parameter) 
         {
+            globalVM.DeleteFromTarget2ListTotal(SeletedItem_Target2List);
             Target2List.Remove(SeletedItem_Target2List);
-            globalVM.DeleteFromTarget2ListTotal(SeletedItem_Target2List); 
         }
         #endregion
 
@@ -161,20 +165,21 @@ namespace Calculator
         private bool TwoPeopleCanDelte(object parameter) { return SeletedItem_TwoPeopleList != null; }
         private void DeleteFromTwoPeople(object paramerter) 
         {
-            TwoPeopleList.Remove(SeletedItem_TwoPeopleList);
+            
             switch (SeletedItem_TwoPeopleList.RelationType) 
             {
                 case Relation.MeAndTarget1:
                     globalVM.DeleteFromTarget1ListTotal(SeletedItem_TwoPeopleList);
-                    return;
+                    break;
                 case Relation.MeAndTarget2:
                     globalVM.DeleteFromTarget2ListTotal(SeletedItem_TwoPeopleList);
-                    return;
+                    break;
                 case Relation.Target1AndTarget2:
                     globalVM.DeleteFromTarget1ListTotal(SeletedItem_TwoPeopleList);
                     globalVM.DeleteFromTarget2ListTotal(SeletedItem_TwoPeopleList);
-                    return;
+                    break;
             }
+            TwoPeopleList.Remove(SeletedItem_TwoPeopleList);
         }
         #endregion
 
@@ -194,7 +199,9 @@ namespace Calculator
 
         public virtual void Confirm(object parameter) 
         {
-
+            globalVM.ShopTips[ShopType] = double.Parse(Tip);
+            globalVM.ShopOthers[ShopType] = double.Parse(Other);
+            CloseWindow();
         }
         #endregion
 

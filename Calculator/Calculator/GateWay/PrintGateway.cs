@@ -31,8 +31,13 @@ namespace Calculator
             txt.AppendLine(string.Format("Amazon会员费: {0}", MainWindowVM.AMZP));
             txt.AppendLine(string.Format("外卖费: {0}", MainWindowVM.WM));
             txt.AppendLine(string.Format("其他费用: {0}", MainWindowVM.QT));
+
             txt.AppendLine("================= 商店额外 =================");
-            txt.AppendLine(string.Format("小费及杂项总计: {0}", GlobalVM.CalculateAllTipsAndOther()));
+            foreach (var k in GlobalVM.ShopTips.Keys) 
+            {
+                txt.AppendLine(string.Format("商店: {0} | 小费: {1}, 其他: {2}", k, GlobalVM.ShopTips[k], GlobalVM.ShopOthers[k]));
+            }
+            
             txt.AppendLine("================= 购物部分 =================");
             foreach (var item in GlobalVM.SharedListTotal)
             {

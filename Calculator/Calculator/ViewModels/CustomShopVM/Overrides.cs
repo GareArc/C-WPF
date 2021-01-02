@@ -40,12 +40,5 @@ namespace Calculator
             return new SharedItem(price, quantity, taxed, GLOBAL.CUSTOM_SERVICE_WEIGHT, 
                 GetRelationType(), ChoiceList_Relation[SeletedIndex_Relation], ShopName);
         }
-
-        public override void Confirm(object parameter)
-        {
-            globalVM.CustomShopTip = double.Parse(Tip);
-            globalVM.CustomShopOther = double.Parse(Other);
-            CloseWindow();
-        }
     }
 }
