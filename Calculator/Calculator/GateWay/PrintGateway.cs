@@ -23,6 +23,9 @@ namespace Calculator
             string path = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "购物清单.txt");
             StringBuilder txt = new StringBuilder();
 
+            // Time info
+            txt.Append(string.Format("生成日期: {0}\n", DateTime.Now.ToString("yyyy-MM-dd HH:m dddd")));
+
             // Shared part
             txt.AppendLine("================= 基础部分 =================");
             txt.AppendLine(string.Format("电费: {0}", MainWindowVM.DF));
@@ -38,14 +41,14 @@ namespace Calculator
                 txt.AppendLine(string.Format("{0} | 小费: {1}, 其他: {2}", GLOBAL.GetDescription(k), GlobalVM.ShopTips[k], GlobalVM.ShopOthers[k]));
             }
             
-            txt.AppendLine("================= 购物部分 =================");
+            txt.AppendLine("================= 三人部分 =================");
             foreach (var item in GlobalVM.SharedListTotal)
             {
                 txt.AppendLine(item.ToString());
             }
 
             // Individual part
-            txt.AppendLine("================= 三人部分 =================");
+            txt.AppendLine("================= 个人部分 =================");
             // Target 1
             txt.AppendLine(string.Format("\n{0} 部分:", GlobalVM.Target1));
             foreach (var item in GlobalVM.Target1ListTotal)

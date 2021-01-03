@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\
+F:\Github repo\C#WPF\Calculator\Calculator\obj\Release\
 Calculator
 none
 false
-DEBUG;TRACE
+TRACE
 F:\Github repo\C#WPF\Calculator\Calculator\App.xaml
 3-1902365547
 
-441628338050
-15-67854060
+441793621860
+14952001748
 View\AddItemWindow.xaml;View\MainWindow.xaml;View\ShopNormalWindow.xaml;
 
-False
+True
 

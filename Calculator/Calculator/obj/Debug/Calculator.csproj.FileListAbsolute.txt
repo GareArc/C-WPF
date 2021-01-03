@@ -19,3 +19,7 @@ F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\View\ShopNormalWindow.g.cs
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\View\AddItemWindow.baml
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\View\ShopNormalWindow.baml
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\GeneratedInternalTypeHelper.g.cs
+F:\Github repo\C#WPF\Calculator\Calculator\bin\Debug\Microsoft.Xaml.Behaviors.dll
+F:\Github repo\C#WPF\Calculator\Calculator\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+F:\Github repo\C#WPF\Calculator\Calculator\bin\Debug\Microsoft.Xaml.Behaviors.xml
+F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.csproj.CopyComplete

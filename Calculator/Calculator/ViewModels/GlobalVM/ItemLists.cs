@@ -51,7 +51,7 @@ namespace Calculator
             return result;
         }
         #endregion
-
+        
         #region Clear
         public void ClearLists() 
         {

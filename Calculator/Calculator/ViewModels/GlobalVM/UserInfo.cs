@@ -8,7 +8,7 @@ namespace Calculator
 {
     partial class GlobalVM
     {
-        public Users Target1 { get; set; } = Users.Unknown;
-        public Users Target2 { get; set; } = Users.Unknown;
+        public Users Target1 { get; set; } = Users.Charlie;
+        public Users Target2 { get; set; } = Users.Gareth;
     }
 }
