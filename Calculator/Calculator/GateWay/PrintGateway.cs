@@ -50,7 +50,7 @@ namespace Calculator
             // Individual part
             txt.AppendLine("================= 个人部分 =================");
             // Target 1
-            txt.AppendLine(string.Format("\n{0} 部分:", GlobalVM.Target1));
+            txt.AppendLine(string.Format("{0} 部分:", GlobalVM.Target1));
             foreach (var item in GlobalVM.Target1ListTotal)
             {
                 txt.AppendLine(item.ToString());
@@ -64,7 +64,7 @@ namespace Calculator
             }
 
             // Conclution
-            txt.AppendLine("================= 总结 =================");
+            txt.AppendLine("\n================= 总结 =================");
             txt.AppendLine(MainWindowVM.User1Result);
             txt.AppendLine(MainWindowVM.User2Result);
 
