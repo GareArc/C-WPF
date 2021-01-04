@@ -4,10 +4,5 @@
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Colors.xaml"/>
     </ResourceDictionary.MergedDictionaries>
-    
-
-    
-
-
 
 </ResourceDictionary>

@@ -46,32 +46,48 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <!--Attributes-->
-                <StackPanel Margin="10" Grid.Column="0">
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                        <TextBlock Text="电费" Margin="0 0 10 0" FontSize="18"/>
-                        <TextBox Text="{Binding DF, Mode=TwoWay}" Margin="50 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                <Grid Margin="10" Grid.Column="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <!--Checkboexes-->
+                    <StackPanel Grid.Column="0">
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                            <CheckBox IsChecked="{Binding C1}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                            <TextBlock Text="电费" Margin="0 0 10 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                            <CheckBox IsChecked="{Binding C2}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                            <TextBlock Text="网费" Margin="0 0 10 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                            <CheckBox IsChecked="{Binding C3}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                            <TextBlock Text="Amz费" Margin="0 0 10 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                            <CheckBox IsChecked="{Binding C4}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                            <TextBlock Text="Amz会员" Margin="0 0 10 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                            <CheckBox IsChecked="{Binding C5}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                            <TextBlock Text="外卖费" Margin="0 0 10 0" FontSize="18"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                            <CheckBox IsChecked="{Binding C6}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                            <TextBlock Text="其他" Margin="0 0 10 0" FontSize="18"/>
+                        </StackPanel>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                        <TextBlock Text="网费" Margin="0 0 10 0" FontSize="18"/>
-                        <TextBox Text="{Binding WF, Mode=TwoWay}" Margin="50 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
+                    <!--Textboexes-->
+                    <StackPanel Grid.Column="1">
+                        <TextBox Text="{Binding DF, Mode=TwoWay}" IsReadOnly="{Binding R1}" Style="{StaticResource MainPageTextBoxes}"/>
+                        <TextBox Text="{Binding WF, Mode=TwoWay}" IsReadOnly="{Binding R2}" Style="{StaticResource MainPageTextBoxes}"/>
+                        <TextBox Text="{Binding AMZ, Mode=TwoWay}" IsReadOnly="{Binding R3}" Style="{StaticResource MainPageTextBoxes}"/>
+                        <TextBox Text="{Binding AMZP, Mode=TwoWay}" IsReadOnly="{Binding R4}" Style="{StaticResource MainPageTextBoxes}"/>
+                        <TextBox Text="{Binding WM, Mode=TwoWay}" IsReadOnly="{Binding R5}" Style="{StaticResource MainPageTextBoxes}"/>
+                        <TextBox Text="{Binding QT, Mode=TwoWay}" IsReadOnly="{Binding R6}" Style="{StaticResource MainPageTextBoxes}"/>
                     </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                        <TextBlock Text="Amz费" Margin="0 0 10 0" FontSize="18"/>
-                        <TextBox Text="{Binding AMZ, Mode=TwoWay}" Margin="30 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                        <TextBlock Text="Amz会员" Margin="0 0 10 0" FontSize="18"/>
-                        <TextBox Text="{Binding AMZP, Mode=TwoWay}" Margin="12 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                        <TextBlock Text="外卖费" Margin="0 0 10 0" FontSize="18"/>
-                        <TextBox Text="{Binding WM, Mode=TwoWay}" Margin="32 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
-                    </StackPanel>
-                    <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                        <TextBlock Text="其他" Margin="0 0 10 0" FontSize="18"/>
-                        <TextBox Text="{Binding QT, Mode=TwoWay}" Margin="50 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
-                    </StackPanel>
-                </StackPanel>
+                </Grid>
                 <!--Three people part-->
                 <ListView ItemsSource="{Binding globalVM.SharedListTotal}" Grid.Column="1" Height="211.8" MaxHeight="211.8"/>
                 <!--Target 1 part-->
@@ -87,14 +103,17 @@
             </Grid>
             <!--Calculate part-->
             <!--Title-->
-            <TextBlock Text="结算部分: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-            <StackPanel Margin="0 18 0 0" Orientation="Horizontal">
-                <Button Command="{Binding CalculateBtnCmd}" Content="结算" Margin="30 0 0 0" Style="{StaticResource WhiteButton}"/>
-                <Button Command="{Binding ClearBtnCmd}" Content="清空" Margin="20 0 0 0" Style="{StaticResource WhiteButton}"/>
-                <Button Command="{Binding ExportBtnCmd}" Content="导出" Margin="20 0 0 0" Style="{StaticResource WhiteButton}"/>
-                <TextBlock Text="{Binding User1Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="230" Margin="40 0 0 0"/>
-                <TextBlock Text="{Binding User2Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="230" Margin="40 0 0 0"/>
+            <StackPanel VerticalAlignment="Bottom">
+                <TextBlock Text="结算部分: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                <StackPanel Margin="0 18 0 0" Orientation="Horizontal">
+                    <Button Command="{Binding CalculateBtnCmd}" Content="结算" Margin="30 0 0 0" Style="{StaticResource WhiteButton}"/>
+                    <Button Command="{Binding ClearBtnCmd}" Content="清空" Margin="20 0 0 0" Style="{StaticResource WhiteButton}"/>
+                    <Button Command="{Binding ExportBtnCmd}" Content="导出" Margin="20 0 0 0" Style="{StaticResource WhiteButton}"/>
+                    <TextBlock Text="{Binding User1Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="230" Margin="40 0 0 0"/>
+                    <TextBlock Text="{Binding User2Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="230" Margin="40 0 0 0"/>
+                </StackPanel>
             </StackPanel>
+            
         </StackPanel>
     </Border>
 </Window>

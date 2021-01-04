@@ -19,12 +19,12 @@ namespace Calculator
         {
             try
             {
-                double.Parse(DF);
-                double.Parse(WF);
-                double.Parse(AMZ);
-                double.Parse(AMZP);
-                double.Parse(WM);
-                double.Parse(QT);
+                if(C1) double.Parse(DF);
+                if(C2) double.Parse(WF);
+                if(C3) double.Parse(AMZ);
+                if(C4) double.Parse(AMZP);
+                if(C5) double.Parse(WM);
+                if(C6) double.Parse(QT);
             }
             catch (Exception e) { return false; }
             return true;
@@ -37,12 +37,12 @@ namespace Calculator
             double user2 = 0;
 
             // three people
-            three += double.Parse(DF);
-            three += double.Parse(WF);
-            three += double.Parse(AMZ);
-            three += double.Parse(AMZP);
-            three += double.Parse(WM);
-            three += double.Parse(QT);
+            if(C1) three += double.Parse(DF);
+            if(C2) three += double.Parse(WF);
+            if(C3) three += double.Parse(AMZ);
+            if(C4) three += double.Parse(AMZP);
+            if(C5) three += double.Parse(WM);
+            if(C6) three += double.Parse(QT);
 
             three += globalVM.CalculateForSharedList();
 

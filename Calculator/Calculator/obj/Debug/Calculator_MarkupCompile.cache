@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\Github repo\C#WPF\Calculator\Calculator\App.xaml
-71836761141
+9470781484
 
 44372995956
 16433179261
-Resources\Styles\Buttons.xaml;Resources\Styles\Colors.xaml;Resources\Styles\ComboBoxes.xaml;Resources\Styles\Test.xaml;View\AddItemWindow.xaml;View\MainWindow.xaml;View\ShopNormalWindow.xaml;
+Resources\Styles\Buttons.xaml;Resources\Styles\CheckBoxes.xaml;Resources\Styles\Colors.xaml;Resources\Styles\ComboBoxes.xaml;Resources\Styles\Test.xaml;Resources\Styles\TextBoxes.xaml;View\AddItemWindow.xaml;View\MainWindow.xaml;View\ShopNormalWindow.xaml;
 
 False
 

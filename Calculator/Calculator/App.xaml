@@ -9,7 +9,9 @@
                 <!-- Order matters-->
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Buttons.xaml" />
+                <ResourceDictionary Source="Resources/Styles/TextBoxes.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/ComboBoxes.xaml" />
+                <ResourceDictionary Source="Resources/Styles/CheckBoxes.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Test.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>

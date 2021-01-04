@@ -30,7 +30,7 @@
                 <!--Taxed-->
                 <StackPanel Grid.Column="2">
                     <TextBlock Text="收税" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-                    <CheckBox IsChecked="{Binding IsTaxedText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 8 0 0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <CheckBox IsChecked="{Binding IsTaxedText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0 8 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource BlueCheckBoxStyle}">
                         <CheckBox.LayoutTransform>
                             <ScaleTransform ScaleX="2" ScaleY="2" />
                         </CheckBox.LayoutTransform>

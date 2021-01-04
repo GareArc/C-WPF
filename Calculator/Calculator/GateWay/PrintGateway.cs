@@ -28,12 +28,12 @@ namespace Calculator
 
             // Shared part
             txt.AppendLine("================= 基础部分 =================");
-            txt.AppendLine(string.Format("电费: {0}", MainWindowVM.DF));
-            txt.AppendLine(string.Format("网费: {0}", MainWindowVM.WF));
-            txt.AppendLine(string.Format("Amazon费: {0}", MainWindowVM.AMZ));
-            txt.AppendLine(string.Format("Amazon会员费: {0}", MainWindowVM.AMZP));
-            txt.AppendLine(string.Format("外卖费: {0}", MainWindowVM.WM));
-            txt.AppendLine(string.Format("其他费用: {0}", MainWindowVM.QT));
+            if(MainWindowVM.C1) txt.AppendLine(string.Format("电费: {0}", MainWindowVM.DF));
+            if(MainWindowVM.C2) txt.AppendLine(string.Format("网费: {0}", MainWindowVM.WF));
+            if(MainWindowVM.C3) txt.AppendLine(string.Format("Amazon费: {0}", MainWindowVM.AMZ));
+            if(MainWindowVM.C4) txt.AppendLine(string.Format("Amazon会员费: {0}", MainWindowVM.AMZP));
+            if(MainWindowVM.C5) txt.AppendLine(string.Format("外卖费: {0}", MainWindowVM.WM));
+            if(MainWindowVM.C6) txt.AppendLine(string.Format("其他费用: {0}", MainWindowVM.QT));
 
             txt.AppendLine("================= 商店额外 =================");
             foreach (var k in GlobalVM.ShopTips.Keys) 

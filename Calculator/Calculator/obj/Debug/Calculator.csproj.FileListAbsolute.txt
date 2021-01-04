@@ -28,3 +28,5 @@ F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.csproj.CopyCompl
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.exe
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.pdb
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Resources\Styles\CheckBoxes.baml
+F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Resources\Styles\TextBoxes.baml
