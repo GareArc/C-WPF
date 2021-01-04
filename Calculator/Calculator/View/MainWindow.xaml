@@ -17,15 +17,15 @@
             <TextBlock Text="三人计算器重制版" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
             <!--Shop-->
             <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                <TextBlock Text="选择商店: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-                <ComboBox SelectedItem="{Binding SeletedItem_Shop, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Shops}" Margin="10 0 0 0" Width="320" Height="30" FontSize="16">
+                <TextBlock Text="选择商店: " FontSize="20" FontWeight="Bold" Background="SkyBlue" TextAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBox SelectedItem="{Binding SeletedItem_Shop, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Shops}" Margin="10 0 0 0" Width="320" Height="30" Style="{StaticResource BlueComboBoxStyle}">
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Converter={StaticResource EnumC}}"/>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumC}}" VerticalAlignment="Center"/>
                         </DataTemplate>
                     </ComboBox.ItemTemplate>
                 </ComboBox>
-                <Button Command="{Binding ShopBtnCmd}" Content="编辑" Margin="20 0 0 0" FontSize="18"/>
+                <Button Command="{Binding ShopBtnCmd}" Content="编辑" Margin="20 0 0 0" Style="{StaticResource WhiteButton}" FontSize="18"/>
             </StackPanel>
             <!--Body-->
             <Grid>
@@ -73,27 +73,27 @@
                     </StackPanel>
                 </StackPanel>
                 <!--Three people part-->
-                <ListView ItemsSource="{Binding globalVM.SharedListTotal}" Grid.Column="1" Height="211" MaxHeight="211"/>
+                <ListView ItemsSource="{Binding globalVM.SharedListTotal}" Grid.Column="1" Height="211.8" MaxHeight="211.8"/>
                 <!--Target 1 part-->
                 <StackPanel Grid.Column="2">
-                    <ComboBox SelectedItem="{Binding globalVM.Target1}" ItemsSource="{Binding ChoiceList_Users}"/>
-                    <ListView ItemsSource="{Binding globalVM.Target1ListTotal}" Height="190" MaxHeight="190"/>
+                    <ComboBox SelectedItem="{Binding globalVM.Target1}" ItemsSource="{Binding ChoiceList_Users}" Style="{StaticResource BlueComboBoxStyle}"/>
+                    <ListView ItemsSource="{Binding globalVM.Target1ListTotal}" Height="186" MaxHeight="186"/>
                 </StackPanel>
                 <!--Target 3 part-->
                 <StackPanel Grid.Column="3">
-                    <ComboBox SelectedItem="{Binding globalVM.Target2}" ItemsSource="{Binding ChoiceList_Users}"/>
-                    <ListView ItemsSource="{Binding globalVM.Target2ListTotal}" Grid.Column="3" Height="190" MaxHeight="190"/>
+                    <ComboBox SelectedItem="{Binding globalVM.Target2}" ItemsSource="{Binding ChoiceList_Users}" Style="{StaticResource BlueComboBoxStyle}"/>
+                    <ListView ItemsSource="{Binding globalVM.Target2ListTotal}" Grid.Column="3" Height="186" MaxHeight="186"/>
                 </StackPanel>
             </Grid>
             <!--Calculate part-->
             <!--Title-->
             <TextBlock Text="结算部分: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-            <StackPanel Margin="0 20 0 0" Orientation="Horizontal">
-                <Button Command="{Binding CalculateBtnCmd}" Content="结算" Margin="20 0 0 0" FontSize="18"/>
-                <Button Command="{Binding ClearBtnCmd}" Content="清空" Margin="20 0 0 0" FontSize="18"/>
-                <Button Command="{Binding ExportBtnCmd}" Content="导出" Margin="20 0 0 0" FontSize="18"/>
-                <TextBlock Text="{Binding User1Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="250" Margin="40 0 0 0"/>
-                <TextBlock Text="{Binding User2Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="250" Margin="40 0 0 0"/>
+            <StackPanel Margin="0 18 0 0" Orientation="Horizontal">
+                <Button Command="{Binding CalculateBtnCmd}" Content="结算" Margin="30 0 0 0" Style="{StaticResource WhiteButton}"/>
+                <Button Command="{Binding ClearBtnCmd}" Content="清空" Margin="20 0 0 0" Style="{StaticResource WhiteButton}"/>
+                <Button Command="{Binding ExportBtnCmd}" Content="导出" Margin="20 0 0 0" Style="{StaticResource WhiteButton}"/>
+                <TextBlock Text="{Binding User1Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="230" Margin="40 0 0 0"/>
+                <TextBlock Text="{Binding User2Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="230" Margin="40 0 0 0"/>
             </StackPanel>
         </StackPanel>
     </Border>

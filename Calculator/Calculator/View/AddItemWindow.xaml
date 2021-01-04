@@ -38,7 +38,7 @@
                 </StackPanel>
             </Grid>
             <!--Confirm-->
-            <Button Command="{Binding ConfirmCmd, UpdateSourceTrigger=PropertyChanged}" Content="确认" Margin="0 20 0 0" Width="80" HorizontalAlignment="Center" FontSize="20"/>
+            <Button Command="{Binding ConfirmCmd, UpdateSourceTrigger=PropertyChanged}" Content="确认" Margin="0 20 0 0" Width="80" HorizontalAlignment="Center" FontSize="18" Style="{StaticResource WhiteButton}"/>
         </StackPanel>
     </Border>
 </Window>
