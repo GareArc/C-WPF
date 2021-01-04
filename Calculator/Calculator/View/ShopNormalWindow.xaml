@@ -8,10 +8,16 @@
         WindowStartupLocation="CenterScreen"
         Title="商店页面" Height="500" Width="800">
     <Border Margin="5">
-        <StackPanel>
-            <TextBlock Text="{Binding ShopName}" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <TextBlock Text="{Binding ShopName}" Grid.Row="0" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
             <!--Body-->
-            <Grid>
+            <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*"/>
                     <ColumnDefinition Width="*"/>
@@ -19,54 +25,75 @@
                     <ColumnDefinition Width="*"/>
                 </Grid.ColumnDefinitions>
                 <!--Three people-->
-                <StackPanel Grid.Column="0">
-                    <TextBlock Text="三人部分" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="三人部分" Grid.Row="0" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
                     <!--Buttons-->
-                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 0">
                         <Button Command="{Binding SharedAddBtnCmd}" Content="添加" Margin="20 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                         <Button Command="{Binding SharedDeleteBtnCmd}" Content="删除" Margin="70 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                     </StackPanel>
                     <!--ViewList-->
-                    <ListView SelectedItem="{Binding SeletedItem_SharedList, Mode=TwoWay}" ItemsSource="{Binding SharedList}" Margin="0 10 0 0" Height="240" MaxHeight="240"/>
-                </StackPanel>
+                    <ListView Grid.Row="2" SelectedItem="{Binding SeletedItem_SharedList, Mode=TwoWay}" ItemsSource="{Binding SharedList}" Margin="0 5 0 5" VerticalAlignment="Stretch"/>
+                </Grid>
                 <!--Target 1-->
-                <StackPanel Grid.Column="1">
-                    <TextBlock Text="{Binding globalVM.Target1}" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="{Binding globalVM.Target1}" Grid.Row="0" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
                     <!--Buttons-->
-                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 0">
                         <Button Command="{Binding Target1ListAddBtnCmd}" Content="添加" Margin="20 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                         <Button Command="{Binding Target1ListDeleteBtnCmd}" Content="删除" Margin="70 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                     </StackPanel>
                     <!--ViewList-->
-                    <ListView SelectedItem="{Binding SeletedItem_Target1List, Mode=TwoWay}" ItemsSource="{Binding Target1List}" Margin="0 10 0 0" Height="240" MaxHeight="240"/>
-                </StackPanel>
+                    <ListView Grid.Row="2" SelectedItem="{Binding SeletedItem_Target1List, Mode=TwoWay}" ItemsSource="{Binding Target1List}" Margin="0 5 0 5" VerticalAlignment="Stretch"/>
+                </Grid>
                 <!--Target 2-->
-                <StackPanel Grid.Column="2">
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <TextBlock Text="{Binding globalVM.Target2}" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
                     <!--Buttons-->
-                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="0 10 0 0">
                         <Button Command="{Binding Target2ListAddBtnCmd}" Content="添加" Margin="20 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                         <Button Command="{Binding Target2ListDeleteBtnCmd}" Content="删除" Margin="70 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                     </StackPanel>
                     <!--ViewList-->
-                    <ListView SelectedItem="{Binding SeletedItem_Target2List, Mode=TwoWay}" ItemsSource="{Binding Target2List}" Margin="0 10 0 0" Height="240" MaxHeight="240"/>
-                </StackPanel>
+                    <ListView Grid.Row="2" SelectedItem="{Binding SeletedItem_Target2List, Mode=TwoWay}" ItemsSource="{Binding Target2List}" Margin="0 5 0 5" VerticalAlignment="Stretch"/>
+                </Grid>
                 <!--TwoPeople-->
-                <StackPanel Grid.Column="3">
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
                     <TextBlock Text="双人部分" TextAlignment="Center" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
                     <!--Combobox-->
-                    <ComboBox SelectedIndex="{Binding SeletedIndex_Relation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding ChoiceList_Relation}" Margin="0 13 0 0" Height="25" Style="{StaticResource BlueComboBoxStyle}"/>
+                    <ComboBox Grid.Row="1" SelectedIndex="{Binding SeletedIndex_Relation, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding ChoiceList_Relation}" Margin="0 13 0 0" Height="25" Style="{StaticResource BlueComboBoxStyle}"/>
                     <!--Buttons-->
-                    <StackPanel Orientation="Horizontal" Margin="0 10 0 0">
+                    <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="0 10 0 0">
                         <Button Command="{Binding TwoPeopleAddCmd}" Content="添加" Margin="20 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                         <Button Command="{Binding TwoPeopleDeleteCmd}" Content="删除" Margin="70 0 0 0" FontSize="18" Style="{StaticResource WhiteButton}"/>
                     </StackPanel>
                     <!--ViewList-->
-                    <ListView SelectedItem="{Binding SeletedItem_TwoPeopleList, Mode=TwoWay}" ItemsSource="{Binding TwoPeopleList}" Margin="0 10 0 0" Height="203" MaxHeight="203"/>
-                </StackPanel>
+                    <ListView Grid.Row="3" SelectedItem="{Binding SeletedItem_TwoPeopleList, Mode=TwoWay}" ItemsSource="{Binding TwoPeopleList}" Margin="0 5 0 5" VerticalAlignment="Stretch"/>
+                </Grid>
             </Grid>
             <!--Other-->
-            <StackPanel Orientation="Horizontal" Margin=" 0 10 0 0">
+            <StackPanel Grid.Row="2" Orientation="Horizontal" Margin=" 0 10 0 0">
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 0">
                     <TextBlock Text="小费" Margin="0 0 0 0" FontSize="18"/>
                     <TextBox Text="{Binding Tip, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="10 0 0 0" Width="60" FontSize="14" TextAlignment="Left"/>
@@ -77,7 +104,7 @@
                 </StackPanel>
             </StackPanel>
             <!--Close-->
-            <Button Command="{Binding ConfirmCmd, UpdateSourceTrigger=PropertyChanged}" Content="完成" Width="100" HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="20" Style="{StaticResource WhiteButton}"/>
-        </StackPanel>
+            <Button Command="{Binding ConfirmCmd, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Content="完成" Width="100" HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="20" Style="{StaticResource WhiteButton}"/>
+        </Grid>
     </Border>
 </Window>

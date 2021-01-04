@@ -12,98 +12,121 @@
         <converter:EnumDescriptionConverter x:Key="EnumC"/>
     </Window.Resources>
     <Border Margin="5">
-        <StackPanel>
-            <!--Title-->
-            <TextBlock Text="三人计算器重制版" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
-            <!--Shop-->
-            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                <TextBlock Text="选择商店: " FontSize="20" FontWeight="Bold" Background="SkyBlue" TextAlignment="Center" VerticalAlignment="Center"/>
-                <ComboBox SelectedItem="{Binding SeletedItem_Shop, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Shops}" Margin="10 0 0 0" Width="320" Height="30" Style="{StaticResource BlueComboBoxStyle}">
-                    <ComboBox.ItemTemplate>
-                        <DataTemplate>
-                            <TextBlock Text="{Binding Converter={StaticResource EnumC}}" VerticalAlignment="Center"/>
-                        </DataTemplate>
-                    </ComboBox.ItemTemplate>
-                </ComboBox>
-                <Button Command="{Binding ShopBtnCmd}" Content="编辑" Margin="20 0 0 0" Style="{StaticResource WhiteButton}" FontSize="18"/>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel Grid.Row="0">
+                <!--Title-->
+                <TextBlock Text="三人计算器重制版" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
+                <!--Shop-->
+                <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                    <TextBlock Text="选择商店: " FontSize="20" FontWeight="Bold" Background="SkyBlue" TextAlignment="Center" VerticalAlignment="Center"/>
+                    <ComboBox SelectedItem="{Binding SeletedItem_Shop, Mode=TwoWay}" ItemsSource="{Binding ChoiceList_Shops}" Margin="10 0 0 0" Width="320" Height="30" Style="{StaticResource BlueComboBoxStyle}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource EnumC}}" VerticalAlignment="Center"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                    <Button Command="{Binding ShopBtnCmd}" Content="编辑" Margin="20 0 0 0" Style="{StaticResource WhiteButton}" FontSize="18"/>
+                </StackPanel>
             </StackPanel>
+            
             <!--Body-->
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="2*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="基础部分" Grid.Column="0" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-                <TextBlock Text="三人部分" Grid.Column="1" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-                <TextBlock Text="个人部分" Grid.Column="2" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
-            </Grid>
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                    <ColumnDefinition Width="*"/>
-                </Grid.ColumnDefinitions>
-                <!--Attributes-->
-                <Grid Margin="10" Grid.Column="0">
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="基础部分" Grid.Column="0" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                    <TextBlock Text="三人部分" Grid.Column="1" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                    <TextBlock Text="个人部分" Grid.Column="2" Margin="0 0 0 0" FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <!--Checkboexes-->
-                    <StackPanel Grid.Column="0">
-                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                            <CheckBox IsChecked="{Binding C1}" Style="{StaticResource BlueCheckBoxStyle}"/>
-                            <TextBlock Text="电费" Margin="0 0 10 0" FontSize="18"/>
+                    <!--Attributes-->
+                    <Grid Margin="10" Grid.Column="0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <!--Checkboexes-->
+                        <StackPanel Grid.Column="0">
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                                <CheckBox IsChecked="{Binding C1}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                                <TextBlock Text="电费" Margin="0 0 10 0" FontSize="18"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                                <CheckBox IsChecked="{Binding C2}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                                <TextBlock Text="网费" Margin="0 0 10 0" FontSize="18"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                                <CheckBox IsChecked="{Binding C3}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                                <TextBlock Text="Amz费" Margin="0 0 10 0" FontSize="18"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                                <CheckBox IsChecked="{Binding C4}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                                <TextBlock Text="Amz会员" Margin="0 0 10 0" FontSize="18"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                                <CheckBox IsChecked="{Binding C5}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                                <TextBlock Text="外卖费" Margin="0 0 10 0" FontSize="18"/>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
+                                <CheckBox IsChecked="{Binding C6}" Style="{StaticResource BlueCheckBoxStyle}"/>
+                                <TextBlock Text="其他" Margin="0 0 10 0" FontSize="18"/>
+                            </StackPanel>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                            <CheckBox IsChecked="{Binding C2}" Style="{StaticResource BlueCheckBoxStyle}"/>
-                            <TextBlock Text="网费" Margin="0 0 10 0" FontSize="18"/>
+                        <!--Textboexes-->
+                        <StackPanel Grid.Column="1">
+                            <TextBox Text="{Binding DF, Mode=TwoWay}" IsReadOnly="{Binding R1}" Style="{StaticResource MainPageTextBoxes}"/>
+                            <TextBox Text="{Binding WF, Mode=TwoWay}" IsReadOnly="{Binding R2}" Style="{StaticResource MainPageTextBoxes}"/>
+                            <TextBox Text="{Binding AMZ, Mode=TwoWay}" IsReadOnly="{Binding R3}" Style="{StaticResource MainPageTextBoxes}"/>
+                            <TextBox Text="{Binding AMZP, Mode=TwoWay}" IsReadOnly="{Binding R4}" Style="{StaticResource MainPageTextBoxes}"/>
+                            <TextBox Text="{Binding WM, Mode=TwoWay}" IsReadOnly="{Binding R5}" Style="{StaticResource MainPageTextBoxes}"/>
+                            <TextBox Text="{Binding QT, Mode=TwoWay}" IsReadOnly="{Binding R6}" Style="{StaticResource MainPageTextBoxes}"/>
                         </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                            <CheckBox IsChecked="{Binding C3}" Style="{StaticResource BlueCheckBoxStyle}"/>
-                            <TextBlock Text="Amz费" Margin="0 0 10 0" FontSize="18"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                            <CheckBox IsChecked="{Binding C4}" Style="{StaticResource BlueCheckBoxStyle}"/>
-                            <TextBlock Text="Amz会员" Margin="0 0 10 0" FontSize="18"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                            <CheckBox IsChecked="{Binding C5}" Style="{StaticResource BlueCheckBoxStyle}"/>
-                            <TextBlock Text="外卖费" Margin="0 0 10 0" FontSize="18"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
-                            <CheckBox IsChecked="{Binding C6}" Style="{StaticResource BlueCheckBoxStyle}"/>
-                            <TextBlock Text="其他" Margin="0 0 10 0" FontSize="18"/>
-                        </StackPanel>
-                    </StackPanel>
-                    <!--Textboexes-->
-                    <StackPanel Grid.Column="1">
-                        <TextBox Text="{Binding DF, Mode=TwoWay}" IsReadOnly="{Binding R1}" Style="{StaticResource MainPageTextBoxes}"/>
-                        <TextBox Text="{Binding WF, Mode=TwoWay}" IsReadOnly="{Binding R2}" Style="{StaticResource MainPageTextBoxes}"/>
-                        <TextBox Text="{Binding AMZ, Mode=TwoWay}" IsReadOnly="{Binding R3}" Style="{StaticResource MainPageTextBoxes}"/>
-                        <TextBox Text="{Binding AMZP, Mode=TwoWay}" IsReadOnly="{Binding R4}" Style="{StaticResource MainPageTextBoxes}"/>
-                        <TextBox Text="{Binding WM, Mode=TwoWay}" IsReadOnly="{Binding R5}" Style="{StaticResource MainPageTextBoxes}"/>
-                        <TextBox Text="{Binding QT, Mode=TwoWay}" IsReadOnly="{Binding R6}" Style="{StaticResource MainPageTextBoxes}"/>
-                    </StackPanel>
+                    </Grid>
+                    <!--Three people part-->
+                    <ListView ItemsSource="{Binding globalVM.SharedListTotal}" Grid.Column="1" VerticalAlignment="Stretch"/>
+                    <!--Target 1 part-->
+                    <Grid Grid.Column="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ComboBox SelectedItem="{Binding globalVM.Target1}" ItemsSource="{Binding ChoiceList_Users}" Style="{StaticResource BlueComboBoxStyle}"/>
+                        <ListView ItemsSource="{Binding globalVM.Target1ListTotal}" VerticalAlignment="Stretch" Grid.Row="1"/>
+                    </Grid>
+                    <!--Target 3 part-->
+                    <Grid Grid.Column="3">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ComboBox SelectedItem="{Binding globalVM.Target2}" ItemsSource="{Binding ChoiceList_Users}" Style="{StaticResource BlueComboBoxStyle}"/>
+                        <ListView ItemsSource="{Binding globalVM.Target2ListTotal}" Grid.Column="3" VerticalAlignment="Stretch" Grid.Row="1"/>
+                    </Grid>
                 </Grid>
-                <!--Three people part-->
-                <ListView ItemsSource="{Binding globalVM.SharedListTotal}" Grid.Column="1" Height="211.8" MaxHeight="211.8"/>
-                <!--Target 1 part-->
-                <StackPanel Grid.Column="2">
-                    <ComboBox SelectedItem="{Binding globalVM.Target1}" ItemsSource="{Binding ChoiceList_Users}" Style="{StaticResource BlueComboBoxStyle}"/>
-                    <ListView ItemsSource="{Binding globalVM.Target1ListTotal}" Height="186" MaxHeight="186"/>
-                </StackPanel>
-                <!--Target 3 part-->
-                <StackPanel Grid.Column="3">
-                    <ComboBox SelectedItem="{Binding globalVM.Target2}" ItemsSource="{Binding ChoiceList_Users}" Style="{StaticResource BlueComboBoxStyle}"/>
-                    <ListView ItemsSource="{Binding globalVM.Target2ListTotal}" Grid.Column="3" Height="186" MaxHeight="186"/>
-                </StackPanel>
             </Grid>
+            
             <!--Calculate part-->
             <!--Title-->
-            <StackPanel VerticalAlignment="Bottom">
+            <StackPanel Grid.Row="3">
                 <TextBlock Text="结算部分: " FontSize="20" FontWeight="Bold" Background="SkyBlue"/>
                 <StackPanel Margin="0 18 0 0" Orientation="Horizontal">
                     <Button Command="{Binding CalculateBtnCmd}" Content="结算" Margin="30 0 0 0" Style="{StaticResource WhiteButton}"/>
@@ -114,6 +137,6 @@
                 </StackPanel>
             </StackPanel>
             
-        </StackPanel>
+        </Grid>
     </Border>
 </Window>
