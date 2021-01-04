@@ -27,3 +27,4 @@ F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.csproj.Fody.Copy
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.csproj.CopyComplete
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.exe
 F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.pdb
+F:\Github repo\C#WPF\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
