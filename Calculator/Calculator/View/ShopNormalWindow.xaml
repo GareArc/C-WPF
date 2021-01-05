@@ -104,7 +104,7 @@
                 </StackPanel>
             </StackPanel>
             <!--Close-->
-            <Button Command="{Binding ConfirmCmd, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Content="完成" Width="100" HorizontalAlignment="Center" Margin="0 10 0 0" FontSize="20" Style="{StaticResource WhiteButton}"/>
+            <Button Command="{Binding ConfirmCmd, UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Content="完成" Width="100" HorizontalAlignment="Center" Margin="0 10 0 10" FontSize="20" Style="{StaticResource WhiteButton}"/>
         </Grid>
     </Border>
 </Window>
