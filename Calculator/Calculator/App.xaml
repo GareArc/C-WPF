@@ -8,6 +8,7 @@
             <ResourceDictionary.MergedDictionaries>
                 <!-- Order matters-->
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
+                <ResourceDictionary Source="Resources/Styles/TextBlocks.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/Buttons.xaml" />
                 <ResourceDictionary Source="Resources/Styles/TextBoxes.xaml"/>
                 <ResourceDictionary Source="Resources/Styles/ComboBoxes.xaml" />

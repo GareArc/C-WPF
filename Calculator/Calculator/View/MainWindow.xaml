@@ -20,7 +20,7 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0">
                 <!--Title-->
-                <TextBlock Text="三人计算器重制版" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue"/>
+                <TextBlock Text="三人计算器重制版" Margin="0 0 0 5" FontSize="24" FontWeight="Bold" Background="LightSkyBlue" Style="{DynamicResource TextBlockStyle1}"/>
                 <!--Shop-->
                 <StackPanel Orientation="Horizontal" Margin="0 0 0 5">
                     <TextBlock Text="选择商店: " FontSize="20" FontWeight="Bold" Background="SkyBlue" TextAlignment="Center" VerticalAlignment="Center"/>
@@ -34,7 +34,7 @@
                     <Button Command="{Binding ShopBtnCmd}" Content="编辑" Margin="20 0 0 0" Style="{StaticResource WhiteButton}" FontSize="18"/>
                 </StackPanel>
             </StackPanel>
-            
+
             <!--Body-->
             <Grid Grid.Row="1">
                 <Grid.RowDefinitions>
@@ -123,7 +123,7 @@
                     </Grid>
                 </Grid>
             </Grid>
-            
+
             <!--Calculate part-->
             <!--Title-->
             <StackPanel Grid.Row="3">
@@ -136,7 +136,7 @@
                     <TextBlock Text="{Binding User2Result}" VerticalAlignment="Center" FontSize="18" FontWeight="Bold" Width="230" Margin="40 0 0 0"/>
                 </StackPanel>
             </StackPanel>
-            
+
         </Grid>
     </Border>
 </Window>
